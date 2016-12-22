@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Event.cs" />
+    <Compile Include="EventManager.cs" />
+    <Compile Include="Events.cs" />
     <Compile Include="GameManager.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
