@@ -323,7 +323,7 @@
             this.label_money.AutoSize = true;
             this.label_money.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_money.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label_money.Location = new System.Drawing.Point(515, 34);
+            this.label_money.Location = new System.Drawing.Point(454, 34);
             this.label_money.Name = "label_money";
             this.label_money.Size = new System.Drawing.Size(73, 23);
             this.label_money.TabIndex = 16;
@@ -333,7 +333,7 @@
             // 
             this.label_day.AutoSize = true;
             this.label_day.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_day.Location = new System.Drawing.Point(454, 34);
+            this.label_day.Location = new System.Drawing.Point(374, 34);
             this.label_day.Name = "label_day";
             this.label_day.Size = new System.Drawing.Size(50, 23);
             this.label_day.TabIndex = 18;
@@ -505,6 +505,7 @@
             this.button_familyActivity.TabIndex = 28;
             this.button_familyActivity.Text = "Family Time";
             this.button_familyActivity.UseVisualStyleBackColor = true;
+            this.button_familyActivity.Click += new System.EventHandler(this.button_familyActivity_Click);
             // 
             // button_clubbingActivity
             // 
@@ -515,6 +516,7 @@
             this.button_clubbingActivity.TabIndex = 29;
             this.button_clubbingActivity.Text = "Clubbing";
             this.button_clubbingActivity.UseVisualStyleBackColor = true;
+            this.button_clubbingActivity.Click += new System.EventHandler(this.button_clubbingActivity_Click);
             // 
             // button_schoolActivity
             // 
@@ -525,6 +527,7 @@
             this.button_schoolActivity.TabIndex = 30;
             this.button_schoolActivity.Text = "School";
             this.button_schoolActivity.UseVisualStyleBackColor = true;
+            this.button_schoolActivity.Click += new System.EventHandler(this.button_schoolActivity_Click);
             // 
             // button_gymActivity
             // 
@@ -535,6 +538,7 @@
             this.button_gymActivity.TabIndex = 31;
             this.button_gymActivity.Text = "Gym";
             this.button_gymActivity.UseVisualStyleBackColor = true;
+            this.button_gymActivity.Click += new System.EventHandler(this.button_gymActivity_Click);
             // 
             // button_workActivity
             // 
@@ -545,6 +549,7 @@
             this.button_workActivity.TabIndex = 32;
             this.button_workActivity.Text = "Work";
             this.button_workActivity.UseVisualStyleBackColor = true;
+            this.button_workActivity.Click += new System.EventHandler(this.button_workActivity_Click);
             // 
             // MainForm
             // 
