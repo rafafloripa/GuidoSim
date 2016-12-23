@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,15 +62,6 @@
             this.label_vehicle = new System.Windows.Forms.Label();
             this.label_phone = new System.Windows.Forms.Label();
             this.label_watch = new System.Windows.Forms.Label();
-            this.pictureBox_watch = new System.Windows.Forms.PictureBox();
-            this.pictureBox_phone = new System.Windows.Forms.PictureBox();
-            this.pictureBox_vehicle = new System.Windows.Forms.PictureBox();
-            this.pictureBox_playerPicture = new System.Windows.Forms.PictureBox();
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button_scooterStore = new System.Windows.Forms.Button();
             this.button_phoneStore = new System.Windows.Forms.Button();
             this.button_watchStore = new System.Windows.Forms.Button();
@@ -79,6 +71,16 @@
             this.button_schoolActivity = new System.Windows.Forms.Button();
             this.button_gymActivity = new System.Windows.Forms.Button();
             this.button_workActivity = new System.Windows.Forms.Button();
+            this.pictureBox_watch = new System.Windows.Forms.PictureBox();
+            this.pictureBox_phone = new System.Windows.Forms.PictureBox();
+            this.pictureBox_vehicle = new System.Windows.Forms.PictureBox();
+            this.pictureBox_playerPicture = new System.Windows.Forms.PictureBox();
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip_mainForm = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_watch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_phone)).BeginInit();
@@ -191,16 +193,21 @@
             this.label_playerName.Size = new System.Drawing.Size(98, 23);
             this.label_playerName.TabIndex = 2;
             this.label_playerName.Text = "Guido Guidi";
+            this.toolTip_mainForm.SetToolTip(this.label_playerName, "Double click to change your name");
+            this.label_playerName.DoubleClick += new System.EventHandler(this.label_playerName_DoubleClick);
             // 
             // label_playerCity
             // 
             this.label_playerCity.AutoSize = true;
             this.label_playerCity.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_playerCity.Location = new System.Drawing.Point(131, 34);
+            this.label_playerCity.Location = new System.Drawing.Point(164, 34);
             this.label_playerCity.Name = "label_playerCity";
             this.label_playerCity.Size = new System.Drawing.Size(103, 23);
             this.label_playerCity.TabIndex = 3;
             this.label_playerCity.Text = "Gothenburg";
+            this.label_playerCity.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.toolTip_mainForm.SetToolTip(this.label_playerCity, "Double click to change your city");
+            this.label_playerCity.DoubleClick += new System.EventHandler(this.label_playerCity_DoubleClick);
             // 
             // progressBar_appearance
             // 
@@ -328,6 +335,8 @@
             this.label_money.Size = new System.Drawing.Size(73, 23);
             this.label_money.TabIndex = 16;
             this.label_money.Text = "$ 235,10";
+            this.label_money.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.toolTip_mainForm.SetToolTip(this.label_money, "Cash, so you can buy stuff");
             // 
             // label_day
             // 
@@ -338,7 +347,8 @@
             this.label_day.Size = new System.Drawing.Size(50, 23);
             this.label_day.TabIndex = 18;
             this.label_day.Text = "Day 7";
-            this.label_day.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label_day.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.toolTip_mainForm.SetToolTip(this.label_day, "In-game days");
             // 
             // label_vehicle
             // 
@@ -369,6 +379,111 @@
             this.label_watch.Size = new System.Drawing.Size(60, 23);
             this.label_watch.TabIndex = 23;
             this.label_watch.Text = "Watch";
+            // 
+            // button_scooterStore
+            // 
+            this.button_scooterStore.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_scooterStore.Location = new System.Drawing.Point(13, 608);
+            this.button_scooterStore.Name = "button_scooterStore";
+            this.button_scooterStore.Size = new System.Drawing.Size(182, 36);
+            this.button_scooterStore.TabIndex = 24;
+            this.button_scooterStore.Text = "Scooter Store";
+            this.toolTip_mainForm.SetToolTip(this.button_scooterStore, "Get a new ride");
+            this.button_scooterStore.UseVisualStyleBackColor = true;
+            // 
+            // button_phoneStore
+            // 
+            this.button_phoneStore.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_phoneStore.Location = new System.Drawing.Point(211, 608);
+            this.button_phoneStore.Name = "button_phoneStore";
+            this.button_phoneStore.Size = new System.Drawing.Size(182, 36);
+            this.button_phoneStore.TabIndex = 25;
+            this.button_phoneStore.Text = "Phone Store";
+            this.toolTip_mainForm.SetToolTip(this.button_phoneStore, "Buy a new phone");
+            this.button_phoneStore.UseVisualStyleBackColor = true;
+            // 
+            // button_watchStore
+            // 
+            this.button_watchStore.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_watchStore.Location = new System.Drawing.Point(406, 608);
+            this.button_watchStore.Name = "button_watchStore";
+            this.button_watchStore.Size = new System.Drawing.Size(182, 36);
+            this.button_watchStore.TabIndex = 26;
+            this.button_watchStore.Text = "Watch Store";
+            this.toolTip_mainForm.SetToolTip(this.button_watchStore, "Get a new watch, bling bling!");
+            this.button_watchStore.UseVisualStyleBackColor = true;
+            // 
+            // button_clothesStore
+            // 
+            this.button_clothesStore.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_clothesStore.Location = new System.Drawing.Point(12, 382);
+            this.button_clothesStore.Name = "button_clothesStore";
+            this.button_clothesStore.Size = new System.Drawing.Size(230, 36);
+            this.button_clothesStore.TabIndex = 27;
+            this.button_clothesStore.Text = "Clothes Store";
+            this.toolTip_mainForm.SetToolTip(this.button_clothesStore, "Update your looks with some new clothes");
+            this.button_clothesStore.UseVisualStyleBackColor = true;
+            // 
+            // button_familyActivity
+            // 
+            this.button_familyActivity.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_familyActivity.Location = new System.Drawing.Point(458, 306);
+            this.button_familyActivity.Name = "button_familyActivity";
+            this.button_familyActivity.Size = new System.Drawing.Size(130, 36);
+            this.button_familyActivity.TabIndex = 28;
+            this.button_familyActivity.Text = "Family Time";
+            this.toolTip_mainForm.SetToolTip(this.button_familyActivity, "Spend time with your family, bambino!\r\n\r\nAppearance --\r\nReputation --\r\nSchool --\r" +
+        "\nFamily ++++++");
+            this.button_familyActivity.UseVisualStyleBackColor = true;
+            this.button_familyActivity.Click += new System.EventHandler(this.button_familyActivity_Click);
+            // 
+            // button_clubbingActivity
+            // 
+            this.button_clubbingActivity.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_clubbingActivity.Location = new System.Drawing.Point(458, 222);
+            this.button_clubbingActivity.Name = "button_clubbingActivity";
+            this.button_clubbingActivity.Size = new System.Drawing.Size(130, 36);
+            this.button_clubbingActivity.TabIndex = 29;
+            this.button_clubbingActivity.Text = "Clubbing";
+            this.toolTip_mainForm.SetToolTip(this.button_clubbingActivity, "PARTY TIME!\r\n\r\nAppearance +\r\nReputation +++\r\nSchool --\r\nFamily --");
+            this.button_clubbingActivity.UseVisualStyleBackColor = true;
+            this.button_clubbingActivity.Click += new System.EventHandler(this.button_clubbingActivity_Click);
+            // 
+            // button_schoolActivity
+            // 
+            this.button_schoolActivity.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_schoolActivity.Location = new System.Drawing.Point(458, 264);
+            this.button_schoolActivity.Name = "button_schoolActivity";
+            this.button_schoolActivity.Size = new System.Drawing.Size(130, 36);
+            this.button_schoolActivity.TabIndex = 30;
+            this.button_schoolActivity.Text = "School";
+            this.toolTip_mainForm.SetToolTip(this.button_schoolActivity, "Go to school, nerd!\r\n\r\nAppearance --\r\nReputation --\r\nSchool +++\r\nFamily -");
+            this.button_schoolActivity.UseVisualStyleBackColor = true;
+            this.button_schoolActivity.Click += new System.EventHandler(this.button_schoolActivity_Click);
+            // 
+            // button_gymActivity
+            // 
+            this.button_gymActivity.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_gymActivity.Location = new System.Drawing.Point(458, 180);
+            this.button_gymActivity.Name = "button_gymActivity";
+            this.button_gymActivity.Size = new System.Drawing.Size(130, 36);
+            this.button_gymActivity.TabIndex = 31;
+            this.button_gymActivity.Text = "Gym";
+            this.toolTip_mainForm.SetToolTip(this.button_gymActivity, "Go to the Gym\r\n\r\nAppearance +++\r\nReputation +\r\nSchool --\r\nFamily --");
+            this.button_gymActivity.UseVisualStyleBackColor = true;
+            this.button_gymActivity.Click += new System.EventHandler(this.button_gymActivity_Click);
+            // 
+            // button_workActivity
+            // 
+            this.button_workActivity.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_workActivity.Location = new System.Drawing.Point(458, 138);
+            this.button_workActivity.Name = "button_workActivity";
+            this.button_workActivity.Size = new System.Drawing.Size(130, 36);
+            this.button_workActivity.TabIndex = 32;
+            this.button_workActivity.Text = "Work";
+            this.toolTip_mainForm.SetToolTip(this.button_workActivity, "Go to work\r\n\r\nMoney ++++\r\nAppearance -\r\nReputation -\r\nSchool -\r\nFamily -");
+            this.button_workActivity.UseVisualStyleBackColor = true;
+            this.button_workActivity.Click += new System.EventHandler(this.button_workActivity_Click);
             // 
             // pictureBox_watch
             // 
@@ -455,101 +570,6 @@
             this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
             this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.printPreviewToolStripMenuItem.Text = "Print Pre&view";
-            // 
-            // button_scooterStore
-            // 
-            this.button_scooterStore.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_scooterStore.Location = new System.Drawing.Point(13, 608);
-            this.button_scooterStore.Name = "button_scooterStore";
-            this.button_scooterStore.Size = new System.Drawing.Size(182, 36);
-            this.button_scooterStore.TabIndex = 24;
-            this.button_scooterStore.Text = "Scooter Store";
-            this.button_scooterStore.UseVisualStyleBackColor = true;
-            // 
-            // button_phoneStore
-            // 
-            this.button_phoneStore.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_phoneStore.Location = new System.Drawing.Point(211, 608);
-            this.button_phoneStore.Name = "button_phoneStore";
-            this.button_phoneStore.Size = new System.Drawing.Size(182, 36);
-            this.button_phoneStore.TabIndex = 25;
-            this.button_phoneStore.Text = "Phone Store";
-            this.button_phoneStore.UseVisualStyleBackColor = true;
-            // 
-            // button_watchStore
-            // 
-            this.button_watchStore.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_watchStore.Location = new System.Drawing.Point(406, 608);
-            this.button_watchStore.Name = "button_watchStore";
-            this.button_watchStore.Size = new System.Drawing.Size(182, 36);
-            this.button_watchStore.TabIndex = 26;
-            this.button_watchStore.Text = "Watch Store";
-            this.button_watchStore.UseVisualStyleBackColor = true;
-            // 
-            // button_clothesStore
-            // 
-            this.button_clothesStore.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_clothesStore.Location = new System.Drawing.Point(12, 382);
-            this.button_clothesStore.Name = "button_clothesStore";
-            this.button_clothesStore.Size = new System.Drawing.Size(230, 36);
-            this.button_clothesStore.TabIndex = 27;
-            this.button_clothesStore.Text = "Clothes Store";
-            this.button_clothesStore.UseVisualStyleBackColor = true;
-            // 
-            // button_familyActivity
-            // 
-            this.button_familyActivity.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_familyActivity.Location = new System.Drawing.Point(458, 306);
-            this.button_familyActivity.Name = "button_familyActivity";
-            this.button_familyActivity.Size = new System.Drawing.Size(130, 36);
-            this.button_familyActivity.TabIndex = 28;
-            this.button_familyActivity.Text = "Family Time";
-            this.button_familyActivity.UseVisualStyleBackColor = true;
-            this.button_familyActivity.Click += new System.EventHandler(this.button_familyActivity_Click);
-            // 
-            // button_clubbingActivity
-            // 
-            this.button_clubbingActivity.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_clubbingActivity.Location = new System.Drawing.Point(458, 222);
-            this.button_clubbingActivity.Name = "button_clubbingActivity";
-            this.button_clubbingActivity.Size = new System.Drawing.Size(130, 36);
-            this.button_clubbingActivity.TabIndex = 29;
-            this.button_clubbingActivity.Text = "Clubbing";
-            this.button_clubbingActivity.UseVisualStyleBackColor = true;
-            this.button_clubbingActivity.Click += new System.EventHandler(this.button_clubbingActivity_Click);
-            // 
-            // button_schoolActivity
-            // 
-            this.button_schoolActivity.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_schoolActivity.Location = new System.Drawing.Point(458, 264);
-            this.button_schoolActivity.Name = "button_schoolActivity";
-            this.button_schoolActivity.Size = new System.Drawing.Size(130, 36);
-            this.button_schoolActivity.TabIndex = 30;
-            this.button_schoolActivity.Text = "School";
-            this.button_schoolActivity.UseVisualStyleBackColor = true;
-            this.button_schoolActivity.Click += new System.EventHandler(this.button_schoolActivity_Click);
-            // 
-            // button_gymActivity
-            // 
-            this.button_gymActivity.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_gymActivity.Location = new System.Drawing.Point(458, 180);
-            this.button_gymActivity.Name = "button_gymActivity";
-            this.button_gymActivity.Size = new System.Drawing.Size(130, 36);
-            this.button_gymActivity.TabIndex = 31;
-            this.button_gymActivity.Text = "Gym";
-            this.button_gymActivity.UseVisualStyleBackColor = true;
-            this.button_gymActivity.Click += new System.EventHandler(this.button_gymActivity_Click);
-            // 
-            // button_workActivity
-            // 
-            this.button_workActivity.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_workActivity.Location = new System.Drawing.Point(458, 138);
-            this.button_workActivity.Name = "button_workActivity";
-            this.button_workActivity.Size = new System.Drawing.Size(130, 36);
-            this.button_workActivity.TabIndex = 32;
-            this.button_workActivity.Text = "Work";
-            this.button_workActivity.UseVisualStyleBackColor = true;
-            this.button_workActivity.Click += new System.EventHandler(this.button_workActivity_Click);
             // 
             // MainForm
             // 
@@ -655,6 +675,7 @@
         private System.Windows.Forms.Button button_schoolActivity;
         private System.Windows.Forms.Button button_gymActivity;
         private System.Windows.Forms.Button button_workActivity;
+        private System.Windows.Forms.ToolTip toolTip_mainForm;
     }
 }
 

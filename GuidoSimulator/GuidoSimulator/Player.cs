@@ -8,6 +8,9 @@ namespace GuidoSimulator
 {
     class Player
     {
+        private string name;
+        private string city;
+
         private decimal money;
         private int appearance;
         private int family;
@@ -18,6 +21,8 @@ namespace GuidoSimulator
 
         public Player()
         {
+            this.Name = "Guido Guidi";
+            this.City = "Gothenburg";
             this.Money = 0;
             this.Appearance = 0;
             this.Family = 0;
@@ -87,6 +92,32 @@ namespace GuidoSimulator
             set
             {
                 school = setValue(value);
+            }
+        }
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+
+            set
+            {
+                name = value;
+            }
+        }
+
+        public string City
+        {
+            get
+            {
+                return city;
+            }
+
+            set
+            {
+                city = value;
             }
         }
 

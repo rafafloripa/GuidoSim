@@ -69,6 +69,16 @@ namespace GuidoSimulator
             label_day.Text = "Day " + gameManager.Day.ToString();
         }
 
+        private void updateName()
+        {
+            label_playerName.Text = gameManager.Player.Name;
+        }
+
+        private void updateCity()
+        {
+            label_playerCity.Text = gameManager.Player.City;
+        }
+
         private void button_workActivity_Click(object sender, EventArgs e)
         {
             gameManager.Work();
@@ -97,6 +107,18 @@ namespace GuidoSimulator
         {
             gameManager.Family();
             updateAttributes();
+        }
+
+        private void label_playerName_DoubleClick(object sender, EventArgs e)
+        {
+            gameManager.ChangeName();
+            updateName();
+        }
+
+        private void label_playerCity_DoubleClick(object sender, EventArgs e)
+        {
+            gameManager.ChangeCity();
+            updateCity();
         }
     }
 }

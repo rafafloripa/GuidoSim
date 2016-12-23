@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace GuidoSimulator
 {
@@ -42,6 +43,28 @@ namespace GuidoSimulator
             set
             {
                 player = value;
+            }
+        }
+
+        public void ChangeName()
+        {
+            DialogResult nameDialog = new DialogResult();
+            NameCityForm nameForm = new NameCityForm("Change name", "What is your name?", player.Name);
+            nameDialog = nameForm.ShowDialog();
+            if (nameDialog == DialogResult.OK)
+            {
+                player.Name = nameForm.Value;
+            }
+        }
+
+        public void ChangeCity()
+        {
+            DialogResult cityDialog = new DialogResult();
+            NameCityForm cityForm = new NameCityForm("Change city", "Where do you live?", player.City);
+            cityDialog = cityForm.ShowDialog();
+            if (cityDialog == DialogResult.OK)
+            {
+                player.City = cityForm.Value;
             }
         }
 
