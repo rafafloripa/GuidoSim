@@ -33,6 +33,15 @@ namespace GuidoSimulator
             updateSchool();
             updateFamily();
             updateMoney();
+            updateImages();
+        }
+
+        private void updateImages()
+        {
+            pictureBox_phone.Image = gameManager.Player.PhoneImage;
+            pictureBox_vehicle.Image = gameManager.Player.VehicleImage;
+            pictureBox_watch.Image = gameManager.Player.WatchImage;
+            pictureBox_playerPicture.Image = gameManager.Player.ClothesImage;
         }
 
         private void updateFamily()
@@ -119,6 +128,50 @@ namespace GuidoSimulator
         {
             gameManager.ChangeCity();
             updateCity();
+        }
+
+        private void button_clothesStore_Click(object sender, EventArgs e)
+        {
+            ClothesStoreForm clothesStore = new ClothesStoreForm(gameManager.Player);
+            clothesStore.FormClosed += (newsender, newe) =>
+            {
+                updateAttributes();
+                // Apply item buffs to attributes
+            };
+            clothesStore.Show();
+        }
+
+        private void button_scooterStore_Click(object sender, EventArgs e)
+        {
+            VehicleStoreForm vehicleStore = new VehicleStoreForm(gameManager.Player);
+            vehicleStore.FormClosed += (newsender, newe) =>
+            {
+                updateAttributes();
+                // Apply item buffs to attributes
+            };
+            vehicleStore.Show();
+        }
+
+        private void button_phoneStore_Click(object sender, EventArgs e)
+        {
+            PhoneStoreForm phoneStore = new PhoneStoreForm(gameManager.Player);
+            phoneStore.FormClosed += (newsender, newe) =>
+            {
+                updateAttributes();
+                // Apply item buffs to attributes
+            };
+            phoneStore.Show();
+        }
+
+        private void button_watchStore_Click(object sender, EventArgs e)
+        {
+            WatchStoreForm watchStore = new WatchStoreForm(gameManager.Player);
+            watchStore.FormClosed += (newsender, newe) =>
+            {
+                updateAttributes();
+                // Apply item buffs to attributes
+            };
+            watchStore.Show();
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GuidoSimulator
 {
-    class Player
+    public class Player
     {
         private string name;
         private string city;
@@ -17,10 +17,18 @@ namespace GuidoSimulator
         private int reputation;
         private int school;
 
+        private int[] currentItemLevels;
+
+        private System.Drawing.Image clothesImage;
+        private System.Drawing.Image phoneImage;
+        private System.Drawing.Image vehicleImage;
+        private System.Drawing.Image watchImage;
+
         private const int maxAttributeValue = 100;
 
         public Player()
         {
+
             this.Name = "Guido Guidi";
             this.City = "Gothenburg";
             this.Money = 0;
@@ -28,6 +36,43 @@ namespace GuidoSimulator
             this.Family = 0;
             this.Reputation = 0;
             this.School = 0;
+            this.clothesImage = Properties.Resources.guido;
+            this.phoneImage = Properties.Resources.phone1;
+            this.vehicleImage = Properties.Resources.bike1;
+            this.watchImage = Properties.Resources.watch1;
+
+            // Clothes store, vehicle store, phone store, watch store
+            this.currentItemLevels = new int[]{-1, -1, -1, -1};
+        }
+
+        public System.Drawing.Image ClothesImage
+        {
+            get { return clothesImage; }
+            set { clothesImage = value; }
+        }
+
+        public System.Drawing.Image PhoneImage
+        {
+            get { return phoneImage; }
+            set { phoneImage = value; }
+        }
+
+        public System.Drawing.Image VehicleImage
+        {
+            get { return vehicleImage; }
+            set { vehicleImage = value; }
+        }
+
+        public System.Drawing.Image WatchImage
+        {
+            get { return watchImage; }
+            set { watchImage = value; }
+        }
+
+        public int[] CurrentItemLevels
+        {
+            get { return currentItemLevels; }
+            set { currentItemLevels = value; }
         }
 
         public decimal Money
