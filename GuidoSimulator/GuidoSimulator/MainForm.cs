@@ -91,30 +91,35 @@ namespace GuidoSimulator
         private void button_workActivity_Click(object sender, EventArgs e)
         {
             gameManager.Work();
+            gameManager.regulateAttributes();
             updateAttributes();
         }
 
         private void button_gymActivity_Click(object sender, EventArgs e)
         {
             gameManager.Gym();
+            gameManager.regulateAttributes();
             updateAttributes();
         }
 
         private void button_clubbingActivity_Click(object sender, EventArgs e)
         {
             gameManager.Clubbing();
+            gameManager.regulateAttributes();
             updateAttributes();
         }
 
         private void button_schoolActivity_Click(object sender, EventArgs e)
         {
             gameManager.School();
+            gameManager.regulateAttributes();
             updateAttributes();
         }
 
         private void button_familyActivity_Click(object sender, EventArgs e)
         {
             gameManager.Family();
+            gameManager.regulateAttributes();
             updateAttributes();
         }
 
@@ -135,8 +140,8 @@ namespace GuidoSimulator
             ClothesStoreForm clothesStore = new ClothesStoreForm(gameManager.Player);
             clothesStore.FormClosed += (newsender, newe) =>
             {
+                gameManager.regulateAttributes();
                 updateAttributes();
-                // Apply item buffs to attributes
             };
             clothesStore.Show();
         }
@@ -146,8 +151,8 @@ namespace GuidoSimulator
             VehicleStoreForm vehicleStore = new VehicleStoreForm(gameManager.Player);
             vehicleStore.FormClosed += (newsender, newe) =>
             {
+                gameManager.regulateAttributes();
                 updateAttributes();
-                // Apply item buffs to attributes
             };
             vehicleStore.Show();
         }
@@ -157,8 +162,8 @@ namespace GuidoSimulator
             PhoneStoreForm phoneStore = new PhoneStoreForm(gameManager.Player);
             phoneStore.FormClosed += (newsender, newe) =>
             {
+                gameManager.regulateAttributes();
                 updateAttributes();
-                // Apply item buffs to attributes
             };
             phoneStore.Show();
         }
@@ -168,8 +173,8 @@ namespace GuidoSimulator
             WatchStoreForm watchStore = new WatchStoreForm(gameManager.Player);
             watchStore.FormClosed += (newsender, newe) =>
             {
+                gameManager.regulateAttributes();
                 updateAttributes();
-                // Apply item buffs to attributes
             };
             watchStore.Show();
         }

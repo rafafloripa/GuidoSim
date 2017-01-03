@@ -87,6 +87,7 @@ namespace GuidoSimulator
             player.Reputation += 2;
             player.Family -= 3;
             player.Appearance += 4;
+
             Day++;
         }
 
@@ -96,6 +97,7 @@ namespace GuidoSimulator
             player.Reputation -= 3;
             player.Family += 9;
             player.Appearance -= 3;
+
             Day++;
         }
 
@@ -105,6 +107,7 @@ namespace GuidoSimulator
             player.Reputation -= 3;
             player.Family += 2;
             player.Appearance -= 3;
+
             Day++;
         }
 
@@ -114,7 +117,45 @@ namespace GuidoSimulator
             player.Reputation += 4;
             player.Family -= 3;
             player.Appearance += 2;
+
             Day++;
+        }
+
+        public void regulateAttributes() // Accounts for item level for the different stats
+        {
+            int base_appearance = 0;
+            int base_rep = 0;
+            int base_school = 0;
+            int base_family = 0;
+
+            if(Player.CurrentItemLevels[0] != -1)
+            {
+                base_appearance += 5 * (Player.CurrentItemLevels[0] + 1);
+                base_rep += 5 * (Player.CurrentItemLevels[0] + 1);
+            }
+
+            if(Player.CurrentItemLevels[1] != -1)
+            {
+                base_appearance += 5 * (Player.CurrentItemLevels[1] + 1);
+                base_rep += 5 * (Player.CurrentItemLevels[1] + 1);
+            }
+
+            if (Player.CurrentItemLevels[2] != -1)
+            {
+                base_school += 5 * (Player.CurrentItemLevels[2] + 1);
+                base_family += 5 * (Player.CurrentItemLevels[2] + 1);
+            }
+
+            if (Player.CurrentItemLevels[3] != -1)
+            {
+                base_school += 5 * (Player.CurrentItemLevels[3] + 1);
+                base_family += 5 * (Player.CurrentItemLevels[3] + 1);
+            }
+
+            if (Player.Appearance < base_appearance) Player.Appearance = base_appearance;
+            if (Player.Reputation < base_rep) Player.Reputation = base_rep;
+            if (Player.School < base_school) Player.School = base_school;
+            if (Player.Family < base_family) Player.Family = base_family;
         }
     }
 }
