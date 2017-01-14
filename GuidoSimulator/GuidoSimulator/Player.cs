@@ -17,21 +17,6 @@ namespace GuidoSimulator
         private int reputation;
         private int school;
 
-
-        // **** Change this *** to Items********************************
-        private int[] currentItemLevels;
-
-
-
-        private Vehicle vehicle;
-        private Watch watch;
-        private Phone phone;  
-
-        public Vehicle Vehicle // MARCO WE ARE HERE
-        {
-            get { return}
-        }
-
         private System.Drawing.Image clothesImage;
         private System.Drawing.Image phoneImage;
         private System.Drawing.Image vehicleImage;
@@ -39,6 +24,40 @@ namespace GuidoSimulator
 
         private const int maxAttributeValue = 100;
 
+        private Vehicle vehicle;
+        private Watch watch;
+        private Phone phone;
+        private Clothing clothing;
+
+        // Property: read-write
+        public Vehicle Vehicle 
+        {
+            get { return this.vehicle; }
+            set { this.vehicle = value; }
+        }
+
+        // Property: read-write
+        public Watch Watch
+        {
+            get { return this.watch; }
+            set { this.watch = value; }
+        }
+
+        // Property: read-write
+        public Phone Phone
+        {
+            get { return this.phone; }
+            set { this.phone = value; }
+        }
+
+        // Property: read-write
+        public Clothing Clothing
+        {
+            get { return this.clothing; }
+            set { this.clothing = value; }
+        }
+
+        // Constructor
         public Player()
         {
 
@@ -53,9 +72,6 @@ namespace GuidoSimulator
             this.phoneImage = Properties.Resources.phone1;
             this.vehicleImage = Properties.Resources.bike1;
             this.watchImage = Properties.Resources.watch1;
-
-            // Clothes store, vehicle store, phone store, watch store
-            this.currentItemLevels = new int[]{-1, -1, -1, -1};
         }
 
         public System.Drawing.Image ClothesImage
@@ -82,101 +98,107 @@ namespace GuidoSimulator
             set { watchImage = value; }
         }
 
-        public int[] CurrentItemLevels
-        {
-            get { return currentItemLevels; }
-            set { currentItemLevels = value; }
-        }
-
         public decimal Money
         {
-            get
-            {
-                return money;
-            }
-
-            set
-            {
-                money = value;
-            }
+            get { return money; }
+            set { money = value; }
         }
 
         public int Appearance
         {
-            get
-            {
-                return appearance;
-            }
-
-            set
-            {
-                appearance = setValue(value);
-            }
+            get { return appearance; }
+            set { appearance = setValue(value); }
         }
 
         public int Family
         {
-            get
-            {
-                return family;
-            }
-
-            set
-            {
-                family = setValue(value);
-            }
+            get { return family; }
+            set { family = setValue(value); }
         }
 
         public int Reputation
         {
-            get
-            {
-                return reputation;
-            }
-
-            set
-            {
-                reputation = setValue(value);
-            }
+            get { return reputation; }
+            set { reputation = setValue(value); }
         }
 
         public int School
         {
-            get
-            {
-                return school;
-            }
-
-            set
-            {
-                school = setValue(value);
-            }
+            get { return school; }
+            set { school = setValue(value); }
         }
 
         public string Name
         {
-            get
-            {
-                return name;
-            }
-
-            set
-            {
-                name = value;
-            }
+            get { return name; }
+            set { name = value; }
         }
 
         public string City
         {
-            get
-            {
-                return city;
-            }
+            get { return city; }
+            set { city = value; }
+        }
 
-            set
-            {
-                city = value;
-            }
+        // Returns true if player has 
+        public bool HasItem(Item item)
+        {
+            int itemId = item.Id;
+
+            if (vehicle != null && vehicle.Id == itemId)
+                return true;
+            else if (clothing != null && clothing.Id == itemId)
+                return true;
+            else if (watch != null && watch.Id == itemId)
+                return true;
+            else if (phone != null && phone.Id == itemId)
+                return true;
+            else
+                return false;
+        }
+
+        // to-do...
+        public bool BuyWatch(Watch watch)
+        {
+            if (money < watch.Price)
+                return false;
+
+            money -= watch.Price;
+            this.watch = watch;
+            return true;
+        }
+
+        // to-do...
+        public bool BuyClothing(Clothing clothing)
+        {
+            if (money < clothing.Price)
+                return false;
+
+            money -= clothing.Price;
+            this.clothing = clothing;
+            return true;
+        }
+
+        // to-do...
+        public bool BuyPhone(Phone phone)
+        {
+            if (money < phone.Price)
+                return false;
+
+            money -= phone.Price;
+            this.phone = phone;
+            return true;
+        }
+
+        // to-do...
+        public bool BuyVehicle(Vehicle vehicle)
+        {
+            if (money < vehicle.Price)
+                return false;
+
+            money -= vehicle.Price;
+            this.vehicle = vehicle;
+            return true;
         }
 
         private int setValue(int value)

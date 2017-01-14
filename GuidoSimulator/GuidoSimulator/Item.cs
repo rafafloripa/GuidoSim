@@ -31,8 +31,6 @@ namespace GuidoSimulator
         public Image ItemImage { get { return this.image; } }
         public ItemEffect ItemEffect { get { return this.itemEffect; } }
 
-        // 
-
         /// <summary>
         /// Empty Constructor.
         /// </summary>
@@ -53,8 +51,6 @@ namespace GuidoSimulator
             this.image = image;
             this.id = id;
             this.itemEffect = itemEffect;
-
         }
-
     }
 }

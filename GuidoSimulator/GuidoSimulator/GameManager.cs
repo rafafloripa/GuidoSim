@@ -18,7 +18,11 @@ namespace GuidoSimulator
         private StoreManager clothingStore;
         private StoreManager phoneStore;
 
-        public StoreManager VehicleStore { get { return vehicleStore; } }
+        // Properties: read-only
+        public StoreManager VehicleStore { get { return this.vehicleStore; } }
+        public StoreManager WatchStore { get { return this.watchStore; } }
+        public StoreManager ClothingStore { get { return this.clothingStore; } }
+        public StoreManager PhoneStore { get { return this.phoneStore; } }
 
         public GameManager()
         {
@@ -29,7 +33,7 @@ namespace GuidoSimulator
             this.vehicleStore = new StoreManager(ItemsHolder.createVehicles());
             this.watchStore = new StoreManager(ItemsHolder.createWatches());
             this.clothingStore = new StoreManager(ItemsHolder.createClothes());
-            this.phoneStore = new StoreManager(ItemsHolder.createClothes());
+            this.phoneStore = new StoreManager(ItemsHolder.createPhones());
         }
 
         public int Day

@@ -100,7 +100,8 @@ namespace GuidoSimulator
         }
 
         // Displays the event in a MessageBox
-        private void displayEvent(Event evt) {
+        private void displayEvent(Event evt)
+        {
 
             if (!evt.HasPlayerChoice)
             {
@@ -174,7 +175,7 @@ namespace GuidoSimulator
 
         private void button_clothesStore_Click(object sender, EventArgs e)
         {
-            BaseStoreForm clothesStore = new BaseStoreForm(gameManager, gameManager.VehicleStore);
+            BaseStoreForm clothesStore = new BaseStoreForm(gameManager, gameManager.ClothingStore);
             clothesStore.FormClosed += (newsender, newe) =>
             {
                 updateAttributes();
@@ -194,7 +195,7 @@ namespace GuidoSimulator
 
         private void button_phoneStore_Click(object sender, EventArgs e)
         {
-            BaseStoreForm phoneStore = new BaseStoreForm(gameManager, gameManager.VehicleStore);
+            BaseStoreForm phoneStore = new BaseStoreForm(gameManager, gameManager.PhoneStore);
             phoneStore.FormClosed += (newsender, newe) =>
             {
                 updateAttributes();
@@ -204,7 +205,7 @@ namespace GuidoSimulator
 
         private void button_watchStore_Click(object sender, EventArgs e)
         {
-            BaseStoreForm watchStore = new BaseStoreForm(gameManager, gameManager.VehicleStore);
+            BaseStoreForm watchStore = new BaseStoreForm(gameManager, gameManager.WatchStore);
             watchStore.FormClosed += (newsender, newe) =>
             {
                 updateAttributes();

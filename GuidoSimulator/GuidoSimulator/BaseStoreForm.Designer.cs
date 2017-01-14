@@ -37,10 +37,18 @@
             this.buy_btn_item_1 = new System.Windows.Forms.Button();
             this.buy_btn_item_2 = new System.Windows.Forms.Button();
             this.buy_btn_item_3 = new System.Windows.Forms.Button();
-            this.label_price_item_0 = new System.Windows.Forms.Label();
-            this.label_price_item_1 = new System.Windows.Forms.Label();
-            this.label_price_item_2 = new System.Windows.Forms.Label();
-            this.label_price_item_3 = new System.Windows.Forms.Label();
+            this.label_price_0 = new System.Windows.Forms.Label();
+            this.label_price_1 = new System.Windows.Forms.Label();
+            this.label_price_2 = new System.Windows.Forms.Label();
+            this.label_price_3 = new System.Windows.Forms.Label();
+            this.price_item_0 = new System.Windows.Forms.Label();
+            this.price_item_1 = new System.Windows.Forms.Label();
+            this.price_item_2 = new System.Windows.Forms.Label();
+            this.price_item_3 = new System.Windows.Forms.Label();
+            this.description_item_0 = new System.Windows.Forms.Label();
+            this.description_item_1 = new System.Windows.Forms.Label();
+            this.description_item_2 = new System.Windows.Forms.Label();
+            this.description_item_3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picture_box_item_0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture_box_item_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture_box_item_2)).BeginInit();
@@ -98,7 +106,7 @@
             // buy_btn_item_0
             // 
             this.buy_btn_item_0.Enabled = false;
-            this.buy_btn_item_0.Location = new System.Drawing.Point(13, 237);
+            this.buy_btn_item_0.Location = new System.Drawing.Point(13, 349);
             this.buy_btn_item_0.Name = "buy_btn_item_0";
             this.buy_btn_item_0.Size = new System.Drawing.Size(141, 23);
             this.buy_btn_item_0.TabIndex = 22;
@@ -109,7 +117,7 @@
             // buy_btn_item_1
             // 
             this.buy_btn_item_1.Enabled = false;
-            this.buy_btn_item_1.Location = new System.Drawing.Point(160, 236);
+            this.buy_btn_item_1.Location = new System.Drawing.Point(160, 348);
             this.buy_btn_item_1.Name = "buy_btn_item_1";
             this.buy_btn_item_1.Size = new System.Drawing.Size(141, 23);
             this.buy_btn_item_1.TabIndex = 23;
@@ -120,7 +128,7 @@
             // buy_btn_item_2
             // 
             this.buy_btn_item_2.Enabled = false;
-            this.buy_btn_item_2.Location = new System.Drawing.Point(307, 236);
+            this.buy_btn_item_2.Location = new System.Drawing.Point(307, 348);
             this.buy_btn_item_2.Name = "buy_btn_item_2";
             this.buy_btn_item_2.Size = new System.Drawing.Size(141, 23);
             this.buy_btn_item_2.TabIndex = 24;
@@ -131,7 +139,7 @@
             // buy_btn_item_3
             // 
             this.buy_btn_item_3.Enabled = false;
-            this.buy_btn_item_3.Location = new System.Drawing.Point(453, 236);
+            this.buy_btn_item_3.Location = new System.Drawing.Point(453, 348);
             this.buy_btn_item_3.Name = "buy_btn_item_3";
             this.buy_btn_item_3.Size = new System.Drawing.Size(141, 23);
             this.buy_btn_item_3.TabIndex = 25;
@@ -139,51 +147,127 @@
             this.buy_btn_item_3.UseVisualStyleBackColor = true;
             this.buy_btn_item_3.Click += new System.EventHandler(this.buy_btn_item_3_Click);
             // 
-            // label_price_item_0
+            // label_price_0
             // 
-            this.label_price_item_0.AutoSize = true;
-            this.label_price_item_0.Location = new System.Drawing.Point(14, 212);
-            this.label_price_item_0.Name = "label_price_item_0";
-            this.label_price_item_0.Size = new System.Drawing.Size(37, 13);
-            this.label_price_item_0.TabIndex = 26;
-            this.label_price_item_0.Text = "Price: ";
+            this.label_price_0.AutoSize = true;
+            this.label_price_0.Location = new System.Drawing.Point(14, 212);
+            this.label_price_0.Name = "label_price_0";
+            this.label_price_0.Size = new System.Drawing.Size(37, 13);
+            this.label_price_0.TabIndex = 26;
+            this.label_price_0.Text = "Price: ";
             // 
-            // label_price_item_1
+            // label_price_1
             // 
-            this.label_price_item_1.AutoSize = true;
-            this.label_price_item_1.Location = new System.Drawing.Point(157, 212);
-            this.label_price_item_1.Name = "label_price_item_1";
-            this.label_price_item_1.Size = new System.Drawing.Size(37, 13);
-            this.label_price_item_1.TabIndex = 27;
-            this.label_price_item_1.Text = "Price: ";
+            this.label_price_1.AutoSize = true;
+            this.label_price_1.Location = new System.Drawing.Point(157, 212);
+            this.label_price_1.Name = "label_price_1";
+            this.label_price_1.Size = new System.Drawing.Size(37, 13);
+            this.label_price_1.TabIndex = 27;
+            this.label_price_1.Text = "Price: ";
             // 
-            // label_price_item_2
+            // label_price_2
             // 
-            this.label_price_item_2.AutoSize = true;
-            this.label_price_item_2.Location = new System.Drawing.Point(304, 212);
-            this.label_price_item_2.Name = "label_price_item_2";
-            this.label_price_item_2.Size = new System.Drawing.Size(37, 13);
-            this.label_price_item_2.TabIndex = 28;
-            this.label_price_item_2.Text = "Price: ";
+            this.label_price_2.AutoSize = true;
+            this.label_price_2.Location = new System.Drawing.Point(304, 212);
+            this.label_price_2.Name = "label_price_2";
+            this.label_price_2.Size = new System.Drawing.Size(37, 13);
+            this.label_price_2.TabIndex = 28;
+            this.label_price_2.Text = "Price: ";
             // 
-            // label_price_item_3
+            // label_price_3
             // 
-            this.label_price_item_3.AutoSize = true;
-            this.label_price_item_3.Location = new System.Drawing.Point(451, 212);
-            this.label_price_item_3.Name = "label_price_item_3";
-            this.label_price_item_3.Size = new System.Drawing.Size(37, 13);
-            this.label_price_item_3.TabIndex = 29;
-            this.label_price_item_3.Text = "Price: ";
+            this.label_price_3.AutoSize = true;
+            this.label_price_3.Location = new System.Drawing.Point(451, 212);
+            this.label_price_3.Name = "label_price_3";
+            this.label_price_3.Size = new System.Drawing.Size(37, 13);
+            this.label_price_3.TabIndex = 29;
+            this.label_price_3.Text = "Price: ";
+            // 
+            // price_item_0
+            // 
+            this.price_item_0.Location = new System.Drawing.Point(74, 212);
+            this.price_item_0.Name = "price_item_0";
+            this.price_item_0.Size = new System.Drawing.Size(80, 13);
+            this.price_item_0.TabIndex = 30;
+            this.price_item_0.Text = "100";
+            this.price_item_0.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // price_item_1
+            // 
+            this.price_item_1.Location = new System.Drawing.Point(221, 212);
+            this.price_item_1.Name = "price_item_1";
+            this.price_item_1.Size = new System.Drawing.Size(80, 13);
+            this.price_item_1.TabIndex = 31;
+            this.price_item_1.Text = "200";
+            this.price_item_1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // price_item_2
+            // 
+            this.price_item_2.Location = new System.Drawing.Point(368, 212);
+            this.price_item_2.Name = "price_item_2";
+            this.price_item_2.Size = new System.Drawing.Size(80, 13);
+            this.price_item_2.TabIndex = 32;
+            this.price_item_2.Text = "300";
+            this.price_item_2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // price_item_3
+            // 
+            this.price_item_3.Location = new System.Drawing.Point(514, 212);
+            this.price_item_3.Name = "price_item_3";
+            this.price_item_3.Size = new System.Drawing.Size(80, 13);
+            this.price_item_3.TabIndex = 33;
+            this.price_item_3.Text = "label3";
+            this.price_item_3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // description_item_0
+            // 
+            this.description_item_0.Location = new System.Drawing.Point(17, 229);
+            this.description_item_0.Name = "description_item_0";
+            this.description_item_0.Size = new System.Drawing.Size(137, 117);
+            this.description_item_0.TabIndex = 34;
+            this.description_item_0.Text = "item 0 description";
+            // 
+            // description_item_1
+            // 
+            this.description_item_1.Location = new System.Drawing.Point(160, 229);
+            this.description_item_1.Name = "description_item_1";
+            this.description_item_1.Size = new System.Drawing.Size(141, 116);
+            this.description_item_1.TabIndex = 35;
+            this.description_item_1.Text = "item 1 description";
+            // 
+            // description_item_2
+            // 
+            this.description_item_2.Location = new System.Drawing.Point(308, 229);
+            this.description_item_2.Name = "description_item_2";
+            this.description_item_2.Size = new System.Drawing.Size(140, 116);
+            this.description_item_2.TabIndex = 36;
+            this.description_item_2.Text = "item 2 description";
+            // 
+            // description_item_3
+            // 
+            this.description_item_3.Location = new System.Drawing.Point(455, 229);
+            this.description_item_3.Name = "description_item_3";
+            this.description_item_3.Size = new System.Drawing.Size(139, 116);
+            this.description_item_3.TabIndex = 37;
+            this.description_item_3.Text = "item 3 description";
             // 
             // BaseStoreForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 272);
-            this.Controls.Add(this.label_price_item_3);
-            this.Controls.Add(this.label_price_item_2);
-            this.Controls.Add(this.label_price_item_1);
-            this.Controls.Add(this.label_price_item_0);
+            this.ClientSize = new System.Drawing.Size(606, 378);
+            this.Controls.Add(this.description_item_3);
+            this.Controls.Add(this.description_item_2);
+            this.Controls.Add(this.description_item_1);
+            this.Controls.Add(this.description_item_0);
+            this.Controls.Add(this.price_item_3);
+            this.Controls.Add(this.price_item_2);
+            this.Controls.Add(this.price_item_1);
+            this.Controls.Add(this.price_item_0);
+            this.Controls.Add(this.label_price_3);
+            this.Controls.Add(this.label_price_2);
+            this.Controls.Add(this.label_price_1);
+            this.Controls.Add(this.label_price_0);
             this.Controls.Add(this.buy_btn_item_3);
             this.Controls.Add(this.buy_btn_item_2);
             this.Controls.Add(this.buy_btn_item_1);
@@ -215,9 +299,17 @@
         protected System.Windows.Forms.Button buy_btn_item_1;
         protected System.Windows.Forms.Button buy_btn_item_2;
         protected System.Windows.Forms.Button buy_btn_item_3;
-        protected System.Windows.Forms.Label label_price_item_0;
-        protected System.Windows.Forms.Label label_price_item_1;
-        protected System.Windows.Forms.Label label_price_item_2;
-        protected System.Windows.Forms.Label label_price_item_3;
+        protected System.Windows.Forms.Label label_price_0;
+        protected System.Windows.Forms.Label label_price_1;
+        protected System.Windows.Forms.Label label_price_2;
+        protected System.Windows.Forms.Label label_price_3;
+        private System.Windows.Forms.Label price_item_0;
+        private System.Windows.Forms.Label price_item_1;
+        private System.Windows.Forms.Label price_item_2;
+        private System.Windows.Forms.Label price_item_3;
+        private System.Windows.Forms.Label description_item_0;
+        private System.Windows.Forms.Label description_item_1;
+        private System.Windows.Forms.Label description_item_2;
+        private System.Windows.Forms.Label description_item_3;
     }
 }

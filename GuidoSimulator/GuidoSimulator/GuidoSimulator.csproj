@@ -56,24 +56,6 @@
     <Compile Include="StoreManager.cs" />
     <Compile Include="Vehicle.cs" />
     <Compile Include="Watch.cs" />
-    <Compile Include="WatchStoreForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WatchStoreForm.Designer.cs">
-      <DependentUpon>WatchStoreForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VehicleStoreForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VehicleStoreForm.Designer.cs">
-      <DependentUpon>VehicleStoreForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PhoneStoreForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PhoneStoreForm.Designer.cs">
-      <DependentUpon>PhoneStoreForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Event.cs" />
     <Compile Include="EventManager.cs" />
     <Compile Include="BaseStoreForm.cs">
@@ -81,12 +63,6 @@
     </Compile>
     <Compile Include="BaseStoreForm.Designer.cs">
       <DependentUpon>BaseStoreForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ClothesStoreForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ClothesStoreForm.Designer.cs">
-      <DependentUpon>ClothesStoreForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GameManager.cs" />
     <Compile Include="MainForm.cs">
