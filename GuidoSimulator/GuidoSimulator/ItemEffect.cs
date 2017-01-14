@@ -18,7 +18,6 @@ namespace GuidoSimulator
         public int Reputation { get { return reputation; } }
         public int School { get { return school; } }
 
-
         public ItemEffect(int appearance, int family, int reputation, int school)
         {
             this.appearance = appearance;

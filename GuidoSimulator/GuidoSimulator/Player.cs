@@ -157,7 +157,12 @@ namespace GuidoSimulator
                 return false;
         }
 
-        // to-do...
+        /// <summary>
+        /// Returns true, replaces watch with given parameter, updates money and other Player stats.
+        /// Returns false if watch is too expensive.
+        /// </summary>
+        /// <param name="watch">The watch the Player is attempting to buy.</param>
+        /// <returns>True if purchase is successful, false otherwise.</returns>
         public bool BuyWatch(Watch watch)
         {
             if (money < watch.Price)
@@ -165,10 +170,16 @@ namespace GuidoSimulator
 
             money -= watch.Price;
             this.watch = watch;
+            HandleItemUpgrades(watch.ItemEffect);
             return true;
         }
 
-        // to-do...
+        /// <summary>
+        /// Returns true, replaces clothing with given parameter, updates money and other Player stats.
+        /// Returns false if clothing is too expensive.
+        /// </summary>
+        /// <param name="clothing">The phone  the Player is attempting to buy.</param>
+        /// <returns>True if purchase is successful, false otherwise.</returns>
         public bool BuyClothing(Clothing clothing)
         {
             if (money < clothing.Price)
@@ -176,10 +187,16 @@ namespace GuidoSimulator
 
             money -= clothing.Price;
             this.clothing = clothing;
+            HandleItemUpgrades(clothing.ItemEffect);
             return true;
         }
 
-        // to-do...
+        /// <summary>
+        /// Returns true, replaces phone with given parameter, updates money and other Player stats.
+        /// Returns false if phone  is too expensive.
+        /// </summary>
+        /// <param name="phone">The phone  the Player is attempting to buy.</param>
+        /// <returns>True if purchase is successful, false otherwise.</returns>
         public bool BuyPhone(Phone phone)
         {
             if (money < phone.Price)
@@ -187,10 +204,16 @@ namespace GuidoSimulator
 
             money -= phone.Price;
             this.phone = phone;
+            HandleItemUpgrades(phone.ItemEffect);
             return true;
         }
 
-        // to-do...
+        /// <summary>
+        /// Returns true, replaces vehicle with given parameter, updates money and other Player stats.
+        /// Returns false if vehicle is too expensive.
+        /// </summary>
+        /// <param name="vehicle">The vehicle the Player is attempting to buy.</param>
+        /// <returns>True if purchase is successful, false otherwise.</returns>
         public bool BuyVehicle(Vehicle vehicle)
         {
             if (money < vehicle.Price)
@@ -198,7 +221,17 @@ namespace GuidoSimulator
 
             money -= vehicle.Price;
             this.vehicle = vehicle;
+            HandleItemUpgrades(vehicle.ItemEffect);
             return true;
+        }
+
+        // Increases/decreases Player stats according to ItemEffect
+        private void HandleItemUpgrades(ItemEffect effect)
+        {
+            this.appearance += effect.Appearance;
+            this.school += effect.School;
+            this.reputation += effect.Reputation;
+            this.family += effect.Family;
         }
 
         private int setValue(int value)
