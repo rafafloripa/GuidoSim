@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace GuidoSimulator
 {
@@ -17,10 +18,10 @@ namespace GuidoSimulator
         private int reputation;
         private int school;
 
-        private System.Drawing.Image clothesImage;
-        private System.Drawing.Image phoneImage;
-        private System.Drawing.Image vehicleImage;
-        private System.Drawing.Image watchImage;
+        //private System.Drawing.Image clothesImage;
+        //private System.Drawing.Image phoneImage;
+        //private System.Drawing.Image vehicleImage;
+        //private System.Drawing.Image watchImage;
 
         private const int maxAttributeValue = 100;
 
@@ -61,42 +62,24 @@ namespace GuidoSimulator
         public Player()
         {
 
-            this.Name = "Guido Guidi";
-            this.City = "Gothenburg";
-            this.Money = 0;
-            this.Appearance = 0;
-            this.Family = 0;
-            this.Reputation = 0;
-            this.School = 0;
-            this.clothesImage = Properties.Resources.guido;
-            this.phoneImage = Properties.Resources.phone1;
-            this.vehicleImage = Properties.Resources.bike1;
-            this.watchImage = Properties.Resources.watch1;
+            this.name = "Guido Guidi";
+            this.city = "Gothenburg";
+            this.money = 0;
+            this.appearance = 0;
+            this.family = 0;
+            this.reputation = 0;
+            this.school = 0;
+
+            this.clothing = ItemsHolder.CreateDefaultClothes();
+            this.phone = ItemsHolder.CreateDefaultPhone();
+            this.vehicle = ItemsHolder.CreateDefaultVehicle();
+            this.watch = ItemsHolder.CreateDefaultWatch();
         }
 
-        public System.Drawing.Image ClothesImage
-        {
-            get { return clothesImage; }
-            set { clothesImage = value; }
-        }
-
-        public System.Drawing.Image PhoneImage
-        {
-            get { return phoneImage; }
-            set { phoneImage = value; }
-        }
-
-        public System.Drawing.Image VehicleImage
-        {
-            get { return vehicleImage; }
-            set { vehicleImage = value; }
-        }
-
-        public System.Drawing.Image WatchImage
-        {
-            get { return watchImage; }
-            set { watchImage = value; }
-        }
+        public Image ClothesImage { get { return this.clothing.ItemImage; }}
+        public Image PhoneImage { get { return this.phone.ItemImage; }}
+        public Image VehicleImage { get { return this.vehicle.ItemImage; }}
+        public Image WatchImage { get { return this.watch.ItemImage; }}
 
         public decimal Money
         {
@@ -145,13 +128,7 @@ namespace GuidoSimulator
         {
             int itemId = item.Id;
 
-            if (vehicle != null && vehicle.Id == itemId)
-                return true;
-            else if (clothing != null && clothing.Id == itemId)
-                return true;
-            else if (watch != null && watch.Id == itemId)
-                return true;
-            else if (phone != null && phone.Id == itemId)
+            if (vehicle.Id == itemId || clothing.Id == itemId || watch.Id == itemId || phone.Id == itemId)
                 return true;
             else
                 return false;

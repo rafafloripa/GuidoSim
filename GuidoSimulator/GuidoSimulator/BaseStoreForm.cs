@@ -12,6 +12,7 @@ namespace GuidoSimulator
 {
     public partial class BaseStoreForm : Form
     {
+        protected MainForm mainForm;
         protected GameManager gameManager;
         protected StoreManager storeManager;
 
@@ -20,9 +21,10 @@ namespace GuidoSimulator
         /// </summary>
         /// <param name="gameManager">The instance of the GameManager.</param>
         /// <param name="storeManager">The instance of the StoreManager</param>
-        public BaseStoreForm(GameManager gameManager, StoreManager storeManager)
+        public BaseStoreForm(MainForm mainForm, GameManager gameManager, StoreManager storeManager)
         {
             InitializeComponent();
+            this.mainForm = mainForm;
             this.gameManager = gameManager;
             this.storeManager = storeManager;
 
@@ -127,7 +129,7 @@ namespace GuidoSimulator
             }
 
             updateGUI();
-                
+            mainForm.UpdateGUI();
         }
 
         /// <summary>
@@ -153,6 +155,7 @@ namespace GuidoSimulator
                 MessageBox.Show("Congratulations on your new purchase!", storeManager.getItem(itemIndex).Name);
 
             updateGUI();
+            mainForm.UpdateGUI();
         }
 
         /// <summary>
@@ -177,6 +180,7 @@ namespace GuidoSimulator
                 MessageBox.Show("Congratulations on your new purchase!", storeManager.getItem(itemIndex).Name);
 
             updateGUI();
+            mainForm.UpdateGUI();
         }
 
         /// <summary>
@@ -201,6 +205,7 @@ namespace GuidoSimulator
                 MessageBox.Show("Congratulations on your new purchase!", storeManager.getItem(itemIndex).Name);
 
             updateGUI();
+            mainForm.UpdateGUI();
         }
     }
 }

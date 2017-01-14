@@ -22,10 +22,11 @@ namespace GuidoSimulator
 
         private void InitializeGUI()
         {            
-            updateAttributes();
+            UpdateGUI();
         }
 
-        private void updateAttributes()
+        // Public: called by store forms at purchase
+        public void UpdateGUI()
         {
             updateDay();
             updateAppearance();
@@ -96,7 +97,7 @@ namespace GuidoSimulator
                 displayEvent(workEvent);
             }
 
-            updateAttributes();
+            UpdateGUI();
         }
 
         // Displays the event in a MessageBox
@@ -122,7 +123,7 @@ namespace GuidoSimulator
                 displayEvent(gymEvent);
             }
 
-            updateAttributes();
+            UpdateGUI();
         }
 
         private void button_clubbingActivity_Click(object sender, EventArgs e)
@@ -134,7 +135,7 @@ namespace GuidoSimulator
                 displayEvent(clubbingEvent);
             }
 
-            updateAttributes();
+            UpdateGUI();
         }
 
         private void button_schoolActivity_Click(object sender, EventArgs e)
@@ -146,7 +147,7 @@ namespace GuidoSimulator
                 displayEvent(schoolEvent);
             }
 
-            updateAttributes();
+            UpdateGUI();
         }
 
         private void button_familyActivity_Click(object sender, EventArgs e)
@@ -158,7 +159,7 @@ namespace GuidoSimulator
                 displayEvent(familyEvent);
             }
 
-            updateAttributes();
+            UpdateGUI();
         }
 
         private void label_playerName_DoubleClick(object sender, EventArgs e)
@@ -175,40 +176,40 @@ namespace GuidoSimulator
 
         private void button_clothesStore_Click(object sender, EventArgs e)
         {
-            BaseStoreForm clothesStore = new BaseStoreForm(gameManager, gameManager.ClothingStore);
+            BaseStoreForm clothesStore = new BaseStoreForm(this, gameManager, gameManager.ClothingStore);
             clothesStore.FormClosed += (newsender, newe) =>
             {
-                updateAttributes();
+                UpdateGUI();
             };
             clothesStore.Show();
         }
 
         private void button_scooterStore_Click(object sender, EventArgs e)
         {
-            BaseStoreForm vehicleStore = new BaseStoreForm(gameManager, gameManager.VehicleStore);
+            BaseStoreForm vehicleStore = new BaseStoreForm(this, gameManager, gameManager.VehicleStore);
             vehicleStore.FormClosed += (newsender, newe) =>
             {
-                updateAttributes();
+                UpdateGUI();
             };
             vehicleStore.Show();
         }
 
         private void button_phoneStore_Click(object sender, EventArgs e)
         {
-            BaseStoreForm phoneStore = new BaseStoreForm(gameManager, gameManager.PhoneStore);
+            BaseStoreForm phoneStore = new BaseStoreForm(this, gameManager, gameManager.PhoneStore);
             phoneStore.FormClosed += (newsender, newe) =>
             {
-                updateAttributes();
+                UpdateGUI();
             };
             phoneStore.Show();
         }
 
         private void button_watchStore_Click(object sender, EventArgs e)
         {
-            BaseStoreForm watchStore = new BaseStoreForm(gameManager, gameManager.WatchStore);
+            BaseStoreForm watchStore = new BaseStoreForm(this, gameManager, gameManager.WatchStore);
             watchStore.FormClosed += (newsender, newe) =>
             {
-                updateAttributes();
+                UpdateGUI();
             };
             watchStore.Show();
         }
