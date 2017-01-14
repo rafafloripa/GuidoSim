@@ -21,10 +21,10 @@ namespace GuidoSimulator
         }
 
         // *** NEW ***
-        public ClothesStoreForm(GameManager gameManager) : base(gameManager) 
+        public ClothesStoreForm(GameManager gameManager, StoreManager storeManager) : base(gameManager, storeManager) 
         {
             fillPictures();
-
+            
 
             enableButtons();
         }

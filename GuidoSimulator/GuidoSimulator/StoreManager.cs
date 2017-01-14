@@ -6,21 +6,24 @@ using System.Threading.Tasks;
 
 namespace GuidoSimulator
 {
-    class StoreManager
+    public class StoreManager
     {
         protected Item[] itemList;
-        private Item currItem;
 
         public StoreManager (Item[] itemList)
         {
             this.itemList = itemList;
         }
 
-        public bool attemptPurchase(Player player, Item item)
+        public Item getItem(int index)
         {
-            if (player.Money < item.Price) return false;
-            player.Money = player.Money - item.Price;
-            // Change the current item
+            return itemList[index];
+        }
+
+        public bool attemptPurchase(Player player, int index)
+        {
+            if (player.Money < itemList[index].Price) return false;
+            player.Money = player.Money - itemList[index].Price;
             // Check if curr item if player already owns item
             return true;
         }

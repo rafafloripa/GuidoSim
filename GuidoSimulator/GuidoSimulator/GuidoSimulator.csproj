@@ -46,9 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clothing.cs" />
     <Compile Include="EventEffect.cs" />
     <Compile Include="EventsHolder.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="ItemEffect.cs" />
+    <Compile Include="ItemsHolder.cs" />
+    <Compile Include="Phone.cs" />
+    <Compile Include="StoreManager.cs" />
+    <Compile Include="Vehicle.cs" />
+    <Compile Include="Watch.cs" />
     <Compile Include="WatchStoreForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,7 +76,6 @@
     </Compile>
     <Compile Include="Event.cs" />
     <Compile Include="EventManager.cs" />
-    <Compile Include="Events.cs" />
     <Compile Include="BaseStoreForm.cs">
       <SubType>Form</SubType>
     </Compile>

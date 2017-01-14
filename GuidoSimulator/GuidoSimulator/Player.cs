@@ -23,10 +23,14 @@ namespace GuidoSimulator
 
 
 
-        //private Vehicle vehicle;
-        //private Watch watch;
-        //private Phone phone;  
-        // **************************************************************              
+        private Vehicle vehicle;
+        private Watch watch;
+        private Phone phone;  
+
+        public Vehicle Vehicle
+        {
+            get { return}
+        }
 
         private System.Drawing.Image clothesImage;
         private System.Drawing.Image phoneImage;

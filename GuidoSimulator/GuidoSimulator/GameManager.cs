@@ -11,13 +11,25 @@ namespace GuidoSimulator
     {
         private int day;
         private Player player;
+
         private EventManager eventManager;
+        private StoreManager vehicleStore;
+        private StoreManager watchStore;
+        private StoreManager clothingStore;
+        private StoreManager phoneStore;
+
+        public StoreManager VehicleStore { get { return vehicleStore; } }
 
         public GameManager()
         {
             this.Day = 1;
             this.Player = new Player();
             this.eventManager = new EventManager();
+
+            this.vehicleStore = new StoreManager(ItemsHolder.createVehicles());
+            this.watchStore = new StoreManager(ItemsHolder.createWatches());
+            this.clothingStore = new StoreManager(ItemsHolder.createClothes());
+            this.phoneStore = new StoreManager(ItemsHolder.createClothes());
         }
 
         public int Day
@@ -175,49 +187,18 @@ namespace GuidoSimulator
         private void HandleEventEffect(EventEffect evtEffect)
         {
             player.Money += evtEffect.Money;
-            player.School -= evtEffect.School;
-            player.Reputation -= evtEffect.Reputation;
-            player.Family -= evtEffect.Family;
-            player.Appearance -= evtEffect.Appearance;
+            player.School += evtEffect.School;
+            player.Reputation += evtEffect.Reputation;
+            player.Family += evtEffect.Family;
+            player.Appearance += evtEffect.Appearance;
         }
 
-        // Accounts for item level for the different stats
-        public void regulateAttributes() 
+        private void ApplyItemEffect(ItemEffect itemEffect)
         {
-            int base_appearance = 0;
-            int base_rep = 0;
-            int base_school = 0;
-            int base_family = 0;
-
-            if(Player.CurrentItemLevels[0] != -1)
-            {
-                base_appearance += 5 * (Player.CurrentItemLevels[0] + 1);
-                base_rep += 5 * (Player.CurrentItemLevels[0] + 1);
-            }
-
-            if(Player.CurrentItemLevels[1] != -1)
-            {
-                base_appearance += 5 * (Player.CurrentItemLevels[1] + 1);
-                base_rep += 5 * (Player.CurrentItemLevels[1] + 1);
-            }
-
-            if (Player.CurrentItemLevels[2] != -1)
-            {
-                base_school += 5 * (Player.CurrentItemLevels[2] + 1);
-                base_family += 5 * (Player.CurrentItemLevels[2] + 1);
-            }
-
-            if (Player.CurrentItemLevels[3] != -1)
-            {
-                base_school += 5 * (Player.CurrentItemLevels[3] + 1);
-                base_family += 5 * (Player.CurrentItemLevels[3] + 1);
-            }
-
-            // Ensure stats don't fall below base-level.
-            if (Player.Appearance < base_appearance) Player.Appearance = base_appearance;
-            if (Player.Reputation < base_rep) Player.Reputation = base_rep;
-            if (Player.School < base_school) Player.School = base_school;
-            if (Player.Family < base_family) Player.Family = base_family;
+            Player.Appearance += itemEffect.Appearance;
+            Player.Family += itemEffect.Family;
+            Player.Reputation += itemEffect.Reputation;
+            Player.School += itemEffect.School;
         }
     }
 }

@@ -96,7 +96,6 @@ namespace GuidoSimulator
                 displayEvent(workEvent);
             }
 
-            gameManager.regulateAttributes();
             updateAttributes();
         }
 
@@ -122,7 +121,6 @@ namespace GuidoSimulator
                 displayEvent(gymEvent);
             }
 
-            gameManager.regulateAttributes();
             updateAttributes();
         }
 
@@ -135,7 +133,6 @@ namespace GuidoSimulator
                 displayEvent(clubbingEvent);
             }
 
-            gameManager.regulateAttributes();
             updateAttributes();
         }
 
@@ -148,7 +145,6 @@ namespace GuidoSimulator
                 displayEvent(schoolEvent);
             }
 
-            gameManager.regulateAttributes();
             updateAttributes();
         }
 
@@ -161,7 +157,6 @@ namespace GuidoSimulator
                 displayEvent(familyEvent);
             }
 
-            gameManager.regulateAttributes();
             updateAttributes();
         }
 
@@ -179,10 +174,9 @@ namespace GuidoSimulator
 
         private void button_clothesStore_Click(object sender, EventArgs e)
         {
-            ClothesStoreForm clothesStore = new ClothesStoreForm(gameManager.Player);
+            BaseStoreForm clothesStore = new BaseStoreForm(gameManager, gameManager.VehicleStore);
             clothesStore.FormClosed += (newsender, newe) =>
             {
-                gameManager.regulateAttributes();
                 updateAttributes();
             };
             clothesStore.Show();
@@ -190,10 +184,9 @@ namespace GuidoSimulator
 
         private void button_scooterStore_Click(object sender, EventArgs e)
         {
-            VehicleStoreForm vehicleStore = new VehicleStoreForm(gameManager.Player);
+            BaseStoreForm vehicleStore = new BaseStoreForm(gameManager, gameManager.VehicleStore);
             vehicleStore.FormClosed += (newsender, newe) =>
             {
-                gameManager.regulateAttributes();
                 updateAttributes();
             };
             vehicleStore.Show();
@@ -201,10 +194,9 @@ namespace GuidoSimulator
 
         private void button_phoneStore_Click(object sender, EventArgs e)
         {
-            PhoneStoreForm phoneStore = new PhoneStoreForm(gameManager.Player);
+            BaseStoreForm phoneStore = new BaseStoreForm(gameManager, gameManager.VehicleStore);
             phoneStore.FormClosed += (newsender, newe) =>
             {
-                gameManager.regulateAttributes();
                 updateAttributes();
             };
             phoneStore.Show();
@@ -212,10 +204,9 @@ namespace GuidoSimulator
 
         private void button_watchStore_Click(object sender, EventArgs e)
         {
-            WatchStoreForm watchStore = new WatchStoreForm(gameManager.Player);
+            BaseStoreForm watchStore = new BaseStoreForm(gameManager, gameManager.VehicleStore);
             watchStore.FormClosed += (newsender, newe) =>
             {
-                gameManager.regulateAttributes();
                 updateAttributes();
             };
             watchStore.Show();
