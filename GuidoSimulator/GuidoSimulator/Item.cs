@@ -14,13 +14,14 @@ namespace GuidoSimulator
     /// Purpose:    Base class for all Items. Extended by child classes such as Clothing, Watch,
     ///             and Vehicle.
     /// </summary>
-    class Item
+    public class Item
     {
         protected int id;
         protected String name;
         protected String description;
         protected decimal price;
         protected Image image;
+        protected ItemEffect itemEffect;
 
         // PROPERTIES: read-only
         public int Id { get { return this.id; } }
@@ -28,6 +29,7 @@ namespace GuidoSimulator
         public String Description { get { return this.description; } }
         public decimal Price { get { return this.price; } }
         public Image ItemImage { get { return this.image; } }
+        public ItemEffect ItemEffect { get { return this.itemEffect; } }
 
         // 
 
@@ -43,12 +45,15 @@ namespace GuidoSimulator
         /// <param name="description">The description of the Item object.</param>
         /// <param name="price">The price of the Item object.</param>
         /// <param name="image">The image of the Item object.</param>
-        public Item(String name, String description, decimal price, Image image)
+        public Item(int id, String name, String description, decimal price, Image image, ItemEffect itemEffect)
         {
             this.name = name;
             this.description = description;
             this.price = price;
             this.image = image;
+            this.id = id;
+            this.itemEffect = itemEffect;
+
         }
 
     }
