@@ -169,4 +169,16 @@
   <data name="watch_level_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\watch_level_3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="default_clothes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\default_clothes.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="default_phone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\default_phone.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="default_vehicle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\default_vehicle.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="default_watch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\default_watch.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

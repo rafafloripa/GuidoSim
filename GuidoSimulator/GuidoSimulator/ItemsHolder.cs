@@ -14,7 +14,7 @@ namespace GuidoSimulator
         public static Clothing CreateDefaultClothes()
         {
             // Change Icon!!!
-            return new Clothing(0, "Default Clothes", "default clothes", 0, Properties.Resources.guido, new ItemEffect(0, 0, 0, 0));
+            return new Clothing(0, "Default Clothes", "default clothes", 0, Properties.Resources.default_clothes, new ItemEffect(0, 0, 0, 0));
         }
 
         public static Clothing[] createClothes()
@@ -37,7 +37,7 @@ namespace GuidoSimulator
         public static Vehicle CreateDefaultVehicle()
         {
             // Change Icon!!!
-            return new Vehicle(10, "Default Vehicle", "default vehicle", 0, Properties.Resources.bike1, new ItemEffect(0, 0, 0, 0));
+            return new Vehicle(10, "Default Vehicle", "default vehicle", 0, Properties.Resources.default_vehicle, new ItemEffect(0, 0, 0, 0));
         }
 
         // Creates watches for stores
@@ -61,7 +61,7 @@ namespace GuidoSimulator
         public static Watch CreateDefaultWatch()
         {
             // Change Icon!!!
-            return new Watch(20, "Default Watch", "default watch", 0, Properties.Resources.watch1, new ItemEffect(0, 0, 0, 0));
+            return new Watch(20, "Default Watch", "default watch", 0, Properties.Resources.default_watch, new ItemEffect(0, 0, 0, 0));
         }
 
         // Creates watches for stores
@@ -85,7 +85,7 @@ namespace GuidoSimulator
         public static Phone CreateDefaultPhone()
         {
             // Change Icon!!!
-            return new Phone(30, "Default Phone", "default phone", 0, Properties.Resources.phone1, new ItemEffect(0, 0, 0, 0));
+            return new Phone(30, "Default Phone", "default phone", 0, Properties.Resources.default_phone, new ItemEffect(0, 0, 0, 0));
         }
 
         // Creates Stores phones
