@@ -27,7 +27,7 @@ namespace GuidoSimulator
         private Watch watch;
         private Phone phone;  
 
-        public Vehicle Vehicle
+        public Vehicle Vehicle // MARCO WE ARE HERE
         {
             get { return}
         }
