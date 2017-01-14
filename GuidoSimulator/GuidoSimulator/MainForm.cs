@@ -90,35 +90,77 @@ namespace GuidoSimulator
 
         private void button_workActivity_Click(object sender, EventArgs e)
         {
-            gameManager.Work();
+            Event workEvent = gameManager.Work();
+
+            if (workEvent != null) {
+                displayEvent(workEvent);
+            }
+
             gameManager.regulateAttributes();
             updateAttributes();
         }
 
+        // Displays the event in a MessageBox
+        private void displayEvent(Event evt) {
+
+            if (!evt.HasPlayerChoice)
+            {
+                MessageBox.Show(evt.Description, evt.Title);
+            }
+            else
+            {
+                // to-do....
+            }
+        }
+
         private void button_gymActivity_Click(object sender, EventArgs e)
         {
-            gameManager.Gym();
+            Event gymEvent = gameManager.Gym();
+
+            if (gymEvent != null)
+            {
+                displayEvent(gymEvent);
+            }
+
             gameManager.regulateAttributes();
             updateAttributes();
         }
 
         private void button_clubbingActivity_Click(object sender, EventArgs e)
         {
-            gameManager.Clubbing();
+            Event clubbingEvent = gameManager.Clubbing();
+
+            if (clubbingEvent != null)
+            {
+                displayEvent(clubbingEvent);
+            }
+
             gameManager.regulateAttributes();
             updateAttributes();
         }
 
         private void button_schoolActivity_Click(object sender, EventArgs e)
         {
-            gameManager.School();
+            Event schoolEvent = gameManager.School();
+
+            if (schoolEvent != null)
+            {
+                displayEvent(schoolEvent);
+            }
+
             gameManager.regulateAttributes();
             updateAttributes();
         }
 
         private void button_familyActivity_Click(object sender, EventArgs e)
         {
-            gameManager.Family();
+            Event familyEvent = gameManager.Family();
+
+            if (familyEvent  != null)
+            {
+                displayEvent(familyEvent);
+            }
+
             gameManager.regulateAttributes();
             updateAttributes();
         }

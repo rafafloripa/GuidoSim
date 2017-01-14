@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventEffect.cs" />
+    <Compile Include="EventsHolder.cs" />
+    <Compile Include="Item.cs" />
     <Compile Include="WatchStoreForm.cs">
       <SubType>Form</SubType>
     </Compile>

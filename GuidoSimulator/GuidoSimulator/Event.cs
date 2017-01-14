@@ -11,15 +11,20 @@ namespace GuidoSimulator
         string title;
         string description;
         bool hasPlayerChoice;
-        int[] effect;
 
-        public Event(string title, string description, bool hasPlayerChoice, int[] effect)
+        EventEffect effect;     //** NEW
+
+        //** NEW
+        public Event(string title, string description, bool hasPlayerChoice, EventEffect effect)
         {
             this.Title = title;
             this.Description = description;
             this.HasPlayerChoice = hasPlayerChoice;
-            this.Effect = effect;
+            this.effect = effect;
         }
+
+        // *** TEMP: remove this constructor!! used in EventManager, RandomWorkEvent()...***
+        public Event() { }
 
         public string Title
         {
@@ -60,7 +65,8 @@ namespace GuidoSimulator
             }
         }
 
-        public int[] Effect
+        //** NEW
+        public EventEffect Effect
         {
             get
             {

@@ -17,7 +17,16 @@ namespace GuidoSimulator
         private int reputation;
         private int school;
 
+
+        // **** Change this *** to Items********************************
         private int[] currentItemLevels;
+
+
+
+        //private Vehicle vehicle;
+        //private Watch watch;
+        //private Phone phone;  
+        // **************************************************************              
 
         private System.Drawing.Image clothesImage;
         private System.Drawing.Image phoneImage;

@@ -10,12 +10,22 @@ namespace GuidoSimulator
 {
     public partial class ClothesStoreForm : GuidoSimulator.BaseStoreForm
     {
+        // *** Deprecated!!! ***
         public ClothesStoreForm(Player player) : base(player)
         {
             InitializeComponent();
             fillPictures();
             setPrices();
             updateMoney();
+            enableButtons();
+        }
+
+        // *** NEW ***
+        public ClothesStoreForm(GameManager gameManager) : base(gameManager) 
+        {
+            fillPictures();
+
+
             enableButtons();
         }
 
