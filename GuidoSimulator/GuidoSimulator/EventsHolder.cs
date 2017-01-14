@@ -26,10 +26,10 @@ namespace GuidoSimulator
             workEvents.Add(new Event("Generous Tip", "One of your customers was very happy with your service and gave you a fat $100 tip!", false, 
                             new EventEffect(100, 0, 0, 0, 0)));
 
-            workEvents.Add(new Event("Making new friends", "One of your colleagues can't stop telling the funniest jokes about... well, mmm... about you...", false,
+            workEvents.Add(new Event("Work Event01", "Work Event01 description", false,
                             new EventEffect(0, 0, 0, -3, 0)));
 
-            workEvents.Add(new Event("If you can't beat them...", "Your boss must have had a wrong day. Reputation loss -3", false,
+            workEvents.Add(new Event("Work Event02", "Work Event02 description", false,
                             new EventEffect(0, 0, 0, -3, 0)));
 
             workEvents.Add(new Event("Slow Down!", "You were fined on your way to work. Money - 48$", false,

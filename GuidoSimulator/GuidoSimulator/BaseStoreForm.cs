@@ -65,21 +65,25 @@ namespace GuidoSimulator
             Item item_0 = storeManager.getItem(0);
             picture_box_item_0.Image = item_0.ItemImage;
             price_item_0.Text = item_0.Price.ToString();
+            name_item_0.Text = item_0.Name;
             description_item_0.Text = item_0.Description;
 
             Item item_1 = storeManager.getItem(1);
             picture_box_item_1.Image = item_1.ItemImage;
             price_item_1.Text = item_1.Price.ToString();
+            name_item_1.Text = item_1.Name;
             description_item_1.Text = item_1.Description;
 
             Item item_2 = storeManager.getItem(2);
             picture_box_item_2.Image = item_2.ItemImage;
             price_item_2.Text = item_2.Price.ToString();
+            name_item_2.Text = item_2.Name;
             description_item_2.Text = item_2.Description;
 
             Item item_3 = storeManager.getItem(3);
             picture_box_item_3.Image = item_3.ItemImage;
             price_item_3.Text = item_3.Price.ToString();
+            name_item_3.Text = item_3.Name;
             description_item_3.Text = item_3.Description;
         }
 

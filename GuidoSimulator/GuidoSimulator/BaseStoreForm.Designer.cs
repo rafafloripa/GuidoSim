@@ -49,6 +49,10 @@
             this.description_item_1 = new System.Windows.Forms.Label();
             this.description_item_2 = new System.Windows.Forms.Label();
             this.description_item_3 = new System.Windows.Forms.Label();
+            this.name_item_0 = new System.Windows.Forms.Label();
+            this.name_item_1 = new System.Windows.Forms.Label();
+            this.name_item_2 = new System.Windows.Forms.Label();
+            this.name_item_3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picture_box_item_0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture_box_item_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture_box_item_2)).BeginInit();
@@ -150,6 +154,7 @@
             // label_price_0
             // 
             this.label_price_0.AutoSize = true;
+            this.label_price_0.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_price_0.Location = new System.Drawing.Point(14, 212);
             this.label_price_0.Name = "label_price_0";
             this.label_price_0.Size = new System.Drawing.Size(37, 13);
@@ -159,6 +164,7 @@
             // label_price_1
             // 
             this.label_price_1.AutoSize = true;
+            this.label_price_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_price_1.Location = new System.Drawing.Point(157, 212);
             this.label_price_1.Name = "label_price_1";
             this.label_price_1.Size = new System.Drawing.Size(37, 13);
@@ -168,6 +174,7 @@
             // label_price_2
             // 
             this.label_price_2.AutoSize = true;
+            this.label_price_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_price_2.Location = new System.Drawing.Point(304, 212);
             this.label_price_2.Name = "label_price_2";
             this.label_price_2.Size = new System.Drawing.Size(37, 13);
@@ -177,6 +184,7 @@
             // label_price_3
             // 
             this.label_price_3.AutoSize = true;
+            this.label_price_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_price_3.Location = new System.Drawing.Point(451, 212);
             this.label_price_3.Name = "label_price_3";
             this.label_price_3.Size = new System.Drawing.Size(37, 13);
@@ -221,41 +229,85 @@
             // 
             // description_item_0
             // 
-            this.description_item_0.Location = new System.Drawing.Point(17, 229);
+            this.description_item_0.Location = new System.Drawing.Point(13, 259);
             this.description_item_0.Name = "description_item_0";
-            this.description_item_0.Size = new System.Drawing.Size(137, 117);
+            this.description_item_0.Size = new System.Drawing.Size(137, 87);
             this.description_item_0.TabIndex = 34;
             this.description_item_0.Text = "item 0 description";
             // 
             // description_item_1
             // 
-            this.description_item_1.Location = new System.Drawing.Point(160, 229);
+            this.description_item_1.Location = new System.Drawing.Point(160, 259);
             this.description_item_1.Name = "description_item_1";
-            this.description_item_1.Size = new System.Drawing.Size(141, 116);
+            this.description_item_1.Size = new System.Drawing.Size(137, 87);
             this.description_item_1.TabIndex = 35;
             this.description_item_1.Text = "item 1 description";
             // 
             // description_item_2
             // 
-            this.description_item_2.Location = new System.Drawing.Point(308, 229);
+            this.description_item_2.Location = new System.Drawing.Point(307, 259);
             this.description_item_2.Name = "description_item_2";
-            this.description_item_2.Size = new System.Drawing.Size(140, 116);
+            this.description_item_2.Size = new System.Drawing.Size(137, 87);
             this.description_item_2.TabIndex = 36;
             this.description_item_2.Text = "item 2 description";
             // 
             // description_item_3
             // 
-            this.description_item_3.Location = new System.Drawing.Point(455, 229);
+            this.description_item_3.Location = new System.Drawing.Point(454, 259);
             this.description_item_3.Name = "description_item_3";
-            this.description_item_3.Size = new System.Drawing.Size(139, 116);
+            this.description_item_3.Size = new System.Drawing.Size(136, 87);
             this.description_item_3.TabIndex = 37;
             this.description_item_3.Text = "item 3 description";
+            // 
+            // name_item_0
+            // 
+            this.name_item_0.AutoSize = true;
+            this.name_item_0.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name_item_0.Location = new System.Drawing.Point(14, 236);
+            this.name_item_0.Name = "name_item_0";
+            this.name_item_0.Size = new System.Drawing.Size(64, 13);
+            this.name_item_0.TabIndex = 38;
+            this.name_item_0.Text = "name item 0";
+            // 
+            // name_item_1
+            // 
+            this.name_item_1.AutoSize = true;
+            this.name_item_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name_item_1.Location = new System.Drawing.Point(160, 236);
+            this.name_item_1.Name = "name_item_1";
+            this.name_item_1.Size = new System.Drawing.Size(64, 13);
+            this.name_item_1.TabIndex = 39;
+            this.name_item_1.Text = "name item 1";
+            // 
+            // name_item_2
+            // 
+            this.name_item_2.AutoSize = true;
+            this.name_item_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name_item_2.Location = new System.Drawing.Point(307, 235);
+            this.name_item_2.Name = "name_item_2";
+            this.name_item_2.Size = new System.Drawing.Size(64, 13);
+            this.name_item_2.TabIndex = 40;
+            this.name_item_2.Text = "name item 2";
+            // 
+            // name_item_3
+            // 
+            this.name_item_3.AutoSize = true;
+            this.name_item_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name_item_3.Location = new System.Drawing.Point(451, 235);
+            this.name_item_3.Name = "name_item_3";
+            this.name_item_3.Size = new System.Drawing.Size(64, 13);
+            this.name_item_3.TabIndex = 41;
+            this.name_item_3.Text = "name item 3";
             // 
             // BaseStoreForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(606, 378);
+            this.Controls.Add(this.name_item_3);
+            this.Controls.Add(this.name_item_2);
+            this.Controls.Add(this.name_item_1);
+            this.Controls.Add(this.name_item_0);
             this.Controls.Add(this.description_item_3);
             this.Controls.Add(this.description_item_2);
             this.Controls.Add(this.description_item_1);
@@ -311,5 +363,9 @@
         private System.Windows.Forms.Label description_item_1;
         private System.Windows.Forms.Label description_item_2;
         private System.Windows.Forms.Label description_item_3;
+        private System.Windows.Forms.Label name_item_0;
+        private System.Windows.Forms.Label name_item_1;
+        private System.Windows.Forms.Label name_item_2;
+        private System.Windows.Forms.Label name_item_3;
     }
 }

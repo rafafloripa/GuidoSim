@@ -24,9 +24,9 @@ namespace GuidoSimulator
                 Properties.Resources.guido, new ItemEffect(10, 0, 10, 0));
             clothingList[1] = new Clothing(2, "Sporty Guido", "This tracksuit allows you to run away fast when the bouncers rush to throw you out.", 1500,
                Properties.Resources.clothes_level_1, new ItemEffect(25, 0, 15, 0));
-            clothingList[2] = new Clothing(3, "Party boy", "This outfit makes you look like Jonah Hill and John Travolta", 6000,
+            clothingList[2] = new Clothing(3, "Party boy", "This outfit will tur you into a mix of John Travolta and Jonah Hill ", 6000,
                Properties.Resources.clothes_level_2, new ItemEffect(35, 0, 20, 0));
-            clothingList[3] = new Clothing(4, "Livin' La Vida Loca", "With this basic outfit, you can hit any club and party with anyone.", 12000,
+            clothingList[3] = new Clothing(4, "Livin' La Vida Loca", "Be ready to become the king of the dancefloor. Uno, dos, tres!", 12000,
                Properties.Resources.clothes_level_3, new ItemEffect(15, 0, 10, 0));
             return clothingList;
         }
@@ -72,7 +72,7 @@ namespace GuidoSimulator
                Properties.Resources.watch1, new ItemEffect(0, 0, 0, 0));
             watchList[1] = new Watch(22, "Watch 1", "Watch 1 description.", 500,
                Properties.Resources.watch_level_1, new ItemEffect(0, 0, 0, 0));
-            watchList[2] = new Watch(23, "Watch 2", "Watch 2 description.", 5000,
+            watchList[2] = new Watch(23, "Watch 2", "Watch 3 description.", 5000,
                Properties.Resources.watch_level_2, new ItemEffect(0, 0, 0, 0));
             watchList[3] = new Watch(24, "Watch 3", "Watch 3 description.", 20000,
                Properties.Resources.watch_level_3, new ItemEffect(0, 0, 0, 0));
@@ -92,13 +92,13 @@ namespace GuidoSimulator
         public static Phone[] createPhones()
         {
             Phone[] phoneList = new Phone[4];
-            phoneList[0] = new Phone(31, "Phone 0", "Phone 0 description", 200,
+            phoneList[0] = new Phone(31, "Phone 0", "Virtually infinite battery, unbreakable shell, this good-old classic should also have Snake installed!", 200,
                Properties.Resources.phone1, new ItemEffect(0, 0, 0, 0));
-            phoneList[1] = new Phone(32, "Phone 1", "Phone 1 description", 1000,
+            phoneList[1] = new Phone(32, "JB G5", "The name says it all... or maybe not??", 1000,
                Properties.Resources.phone_level_1, new ItemEffect(0, 0, 0, 0));
-            phoneList[2] = new Phone(33, "Phone 2", "Phone 2 description", 10000,
+            phoneList[2] = new Phone(33, "I-Throne 9", "Last generation mobile phone. You must have one of this.", 10000,
                Properties.Resources.phone_level_2, new ItemEffect(0, 0, 0, 0));
-            phoneList[3] = new Phone(34, "Phone 3", "Phone 3 description", 30000,
+            phoneList[3] = new Phone(34, "I-Throne gold", "Be on top.", 30000,
                Properties.Resources.phone_level_3, new ItemEffect(0, 0, 0, 0));
             return phoneList;
         }
