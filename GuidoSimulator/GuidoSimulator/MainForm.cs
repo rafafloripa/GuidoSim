@@ -10,22 +10,41 @@ using System.Windows.Forms;
 
 namespace GuidoSimulator
 {
+    /// <summary>
+    /// Name:       MainForm.cs
+    /// 
+    /// Created:    by ...
+    /// 
+    /// Purpose:    This module handles the user interactions with the 
+    ///             GUI elements and displays the information from the GameManager.
+    /// </summary>
     public partial class MainForm : Form
     {
         GameManager gameManager = new GameManager();
 
+        /// <summary>
+        /// Constructor.
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
             InitializeGUI();
         }
 
+        /// <summary>
+        /// Initialize GUI control elements.
+        /// </summary>
         private void InitializeGUI()
         {            
             UpdateGUI();
+
+            updateName();
+            updateCity();
         }
 
-        // Public: called by store forms at purchase
+        /// <summary>
+        /// Updates info in the GUI controls. 
+        /// </summary>
         public void UpdateGUI()
         {
             updateDay();
@@ -37,6 +56,9 @@ namespace GuidoSimulator
             updateImages();
         }
 
+        /// <summary>
+        /// Update picture-box images.
+        /// </summary>
         private void updateImages()
         {
             pictureBox_phone.Image = gameManager.Player.PhoneImage;
@@ -45,53 +67,77 @@ namespace GuidoSimulator
             pictureBox_playerPicture.Image = gameManager.Player.ClothesImage;
         }
 
+        /// <summary>
+        /// Update family score and progress bar.
+        /// </summary>
         private void updateFamily()
         {
-            label_familyValue.Text = (gameManager.Player.Family / 10).ToString();
+            label_familyValue.Text = (gameManager.Player.Family).ToString();
             progressBar_family.Value = gameManager.Player.Family;
         }
 
+        /// <summary>
+        /// Update school score and progress bar.
+        /// </summary>
         private void updateSchool()
         {
-            label_schoolValue.Text = (gameManager.Player.School / 10).ToString();
+            label_schoolValue.Text = (gameManager.Player.School).ToString();
             progressBar_school.Value = gameManager.Player.School;
         }
 
+        /// <summary>
+        /// Update reputation score and progress bar.
+        /// </summary>
         private void updateReputation()
         {
-            label_reputationValue.Text = (gameManager.Player.Reputation / 10).ToString();
+            label_reputationValue.Text = (gameManager.Player.Reputation).ToString();
             progressBar_reputation.Value = gameManager.Player.Reputation;
         }
 
+        /// <summary>
+        /// Update appearance score and progress bar.
+        /// </summary>
         private void updateAppearance()
         {
-            label_appearanceValue.Text = (gameManager.Player.Appearance / 10).ToString();
+            label_appearanceValue.Text = (gameManager.Player.Appearance).ToString();
             progressBar_appearance.Value = gameManager.Player.Appearance;
         }
 
+        /// <summary>
+        /// Update money GUI label to display current budget.
+        /// </summary>
         private void updateMoney()
         {
             label_money.Text = "$" + gameManager.Player.Money.ToString();
         }
 
+        /// <summary>
+        /// Update info in day label to display current day.
+        /// </summary>
         private void updateDay()
         {
-            label_day.Text = "Day " + gameManager.Day.ToString();
+            //label_day.Text = "Day " + gameManager.Day.ToString();
+            label_day.Text = gameManager.DateString;
         }
 
+        /// <summary>
+        /// Update player name label to display current player name.
+        /// </summary>
         private void updateName()
         {
             label_playerName.Text = gameManager.Player.Name;
         }
 
+        /// <summary>
+        /// Update city label to display current city name.
+        /// </summary>
         private void updateCity()
         {
             label_playerCity.Text = gameManager.Player.City;
         }
 
-
         /// <summary>
-        /// 
+        /// Enables all button controls.
         /// </summary>
         private void EnableButtons()
         {
@@ -104,11 +150,10 @@ namespace GuidoSimulator
             button_workActivity.Enabled = true;
             button_clubbingActivity.Enabled = true;
             button_schoolActivity.Enabled = true;
-
         }
 
         /// <summary>
-        /// 
+        /// Disables all button controls.
         /// </summary>
         private void DisableButtons()
         {
@@ -121,6 +166,20 @@ namespace GuidoSimulator
             button_workActivity.Enabled = false;
             button_clubbingActivity.Enabled = false;
             button_schoolActivity.Enabled = false;
+        }
+
+        /// <summary>
+        /// Displays given string message in a Message box. Returns true if user selects 'YES', false if user selects 'NO'.
+        /// </summary>
+        /// <param name="message">The message to display in the MessageBox</param>
+        /// <returns>True if user selects 'YES', false if user selects 'NO'</returns>
+        private bool ReadConfirmation(string message)
+        {
+            // Show confirmation MessageBox displaying 'message' and read user input. If user selected yes...
+            if (MessageBox.Show(message, "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                return true;
+            else   // ... else user selected 'NO'
+                return false;
         }
 
         /// <summary>
@@ -145,7 +204,10 @@ namespace GuidoSimulator
             UpdateGUI();
         }
 
-        // Displays the event in a MessageBox
+        /// <summary>
+        /// Displays an Event in an EventForm.
+        /// </summary>
+        /// <param name="evt"></param>
         private void displayEvent(Event evt)
         {
             // Display choice-event...
@@ -169,6 +231,11 @@ namespace GuidoSimulator
             }
         }
 
+        /// <summary>
+        /// Event Handler. Handles click on gym button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_gymActivity_Click(object sender, EventArgs e)
         {
             DisableButtons();
@@ -186,6 +253,11 @@ namespace GuidoSimulator
             UpdateGUI();
         }
 
+        /// <summary>
+        /// Event Handler. Handles click on clubbing button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_clubbingActivity_Click(object sender, EventArgs e)
         {
             DisableButtons();
@@ -203,6 +275,11 @@ namespace GuidoSimulator
             UpdateGUI();
         }
 
+        /// <summary>
+        /// Event Handler. Handles click on shool button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_schoolActivity_Click(object sender, EventArgs e)
         {
             DisableButtons();
@@ -220,6 +297,11 @@ namespace GuidoSimulator
             UpdateGUI();
         }
 
+        /// <summary>
+        /// Event Handler.Handles the click event on the family activity button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_familyActivity_Click(object sender, EventArgs e)
         {
             DisableButtons();
@@ -237,18 +319,47 @@ namespace GuidoSimulator
             UpdateGUI();
         }
 
+        /// <summary>
+        /// Event Handler.Handles the click event on the player name label.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void label_playerName_DoubleClick(object sender, EventArgs e)
         {
-            gameManager.ChangeName();
+            DialogResult nameDialog = new DialogResult();
+            NameCityForm nameForm = new NameCityForm("Change name", "What is your name?", gameManager.GetPlayerName());
+            nameDialog = nameForm.ShowDialog();
+            if (nameDialog == DialogResult.OK)
+            {
+                gameManager.ChangePlayerName(nameForm.Value);
+            }
+
             updateName();
         }
 
+        /// <summary>
+        /// Event Handler.Handles the click event on the City label.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void label_playerCity_DoubleClick(object sender, EventArgs e)
         {
-            gameManager.ChangeCity();
+            DialogResult cityDialog = new DialogResult();
+            NameCityForm cityForm = new NameCityForm("Change city", "Where do you live?", gameManager.GetPlayerCity());
+            cityDialog = cityForm.ShowDialog();
+            if (cityDialog == DialogResult.OK)
+            {
+                gameManager.ChangeCity(cityForm.Value);
+            }
+
             updateCity();
         }
 
+        /// <summary>
+        /// Event Handler.Handles the click event on the clothes store button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_clothesStore_Click(object sender, EventArgs e)
         {
             DisableButtons();
@@ -261,6 +372,11 @@ namespace GuidoSimulator
             clothesStore.Show();
         }
 
+        /// <summary>
+        /// Event Handler.Handles the click event on the vehicle store button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_scooterStore_Click(object sender, EventArgs e)
         {
             DisableButtons();
@@ -273,6 +389,11 @@ namespace GuidoSimulator
             vehicleStore.Show();
         }
 
+        /// <summary>
+        /// Event Handler. Handles the click event on the phone store button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_phoneStore_Click(object sender, EventArgs e)
         {
             DisableButtons();
@@ -285,6 +406,11 @@ namespace GuidoSimulator
             phoneStore.Show();
         }
 
+        /// <summary>
+        /// Event Handler. Handles the click event on the watch store button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_watchStore_Click(object sender, EventArgs e)
         {
             DisableButtons();
@@ -297,10 +423,64 @@ namespace GuidoSimulator
             watchStore.Show();
         }
 
+        /// <summary>
+        /// Event Handler. Handles click on 'About' in Help menu. 
+        /// Opens the About Form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AboutGuido aboutBox = new AboutGuido();
             aboutBox.ShowDialog();
+        }
+
+        /// <summary>
+        /// Event Handler. Handles click on 'exit' option in File menu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void on_exit_fileMenu_click(object sender, EventArgs e)
+        {
+            if (ReadConfirmation("Are you sure you want to exit 'Guido Manager'? All the unsaved data will be lost."))
+                Application.Exit();
+        }
+
+        /// <summary>
+        /// Event Handler. Handles click on 'save game' option in File menu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void on_save_fileMenu_click(object sender, EventArgs e)
+        {
+            MessageBox.Show("TO-DO: save functionality");
+        }
+
+        /// <summary>
+        /// Event Handler. Handles click on 'Load game' option in File Menu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void on_load_fileMenu_click(object sender, EventArgs e)
+        {
+            if (ReadConfirmation("Are you sure you want to load a saved game? All the unsaved data will be lost."))
+            {
+                MessageBox.Show("TO-DO: load functionality");
+            }
+        }
+
+        /// <summary>
+        /// Event Handler. Handles click on 'New game' option in File Menu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void on_new_fileMenu_click(object sender, EventArgs e)
+        {
+            if (ReadConfirmation("Are you sure you want to start a new game? All the unsaved data will be lost."))
+            {
+                gameManager = new GameManager();
+                InitializeGUI();
+            }
         }
     }
 }

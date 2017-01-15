@@ -47,7 +47,7 @@ namespace GuidoSimulator
                 Properties.Resources.thug, new EventEffect(0, 0, 0, 20, -10)));
             schoolEvents.Add(new Event("Whoops..", "Seems that you 'accidentally' put off the fire alarm today with your fireworks! Your classmates are impressed, your reputation has gone up.",
                 Properties.Resources.fire_alarm, new EventEffect(0, 0, 0, 10, 0)));
-            schoolEvents.Add(new Event("Good deed of the day", "You help an old lady across the street, doing your best to make sure everybody around the block notices your kindness.",
+            schoolEvents.Add(new Event("Good deed of the day", "You help an old lady across the street, doing your best to make sure everybody around the block notice your kindness.",
                 Properties.Resources.old_lady, new EventEffect(0, 0, 0, 20, 0)));
 
 
@@ -116,6 +116,9 @@ namespace GuidoSimulator
 
             clubbingEvents.Add(new Event("Bouncer problems", "The bouncer checked your ID and saw that you were too young to hit the club. Your reputation has decreased!",
                 Properties.Resources.bouncer, new EventEffect(0, 0, 0, -20, 0)));
+
+            clubbingEvents.Add(new Event("I want to be sedated!", "You seem a little overexcited. Mr. Techno Viking himself had to intervene to set you straight. You have been warned.",
+                Properties.Resources.viking, new EventEffect(0, 0, 0, -10, 0)));
 
             return clubbingEvents;
         }

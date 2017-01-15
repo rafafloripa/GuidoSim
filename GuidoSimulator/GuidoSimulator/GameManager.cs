@@ -9,7 +9,11 @@ namespace GuidoSimulator
 {
     public class GameManager
     {
+        private DateTime startDate = new DateTime(2017, 1, 1);
+
+        private DateTime currentDate;
         private int day;
+        private DateTime date;
         private Player player;
 
         private EventManager eventManager;
@@ -19,71 +23,82 @@ namespace GuidoSimulator
         private StoreManager phoneStore;
 
         // Properties: read-only
-        public StoreManager VehicleStore { get { return this.vehicleStore; } }
-        public StoreManager WatchStore { get { return this.watchStore; } }
-        public StoreManager ClothingStore { get { return this.clothingStore; } }
-        public StoreManager PhoneStore { get { return this.phoneStore; } }
+        public StoreManager VehicleStore { get { return vehicleStore; } }
+        public StoreManager WatchStore { get { return watchStore; } }
+        public StoreManager ClothingStore { get { return clothingStore; } }
+        public StoreManager PhoneStore { get { return phoneStore; } }
+        public string DateString { get { return currentDate.ToLongDateString(); } }
+        public int Day { get { return day; } }
+        public Player Player { get { return player; } }
 
+        /// <summary>
+        /// Constructor.
+        /// </summary>
         public GameManager()
         {
-            this.Day = 1;
-            this.Player = new Player();
-            this.eventManager = new EventManager();
+            currentDate = startDate;
+            day = 0;
+            player = new Player();
+            eventManager = new EventManager();
 
-            this.vehicleStore = new StoreManager(ItemsHolder.createVehicles());
-            this.watchStore = new StoreManager(ItemsHolder.createWatches());
-            this.clothingStore = new StoreManager(ItemsHolder.createClothes());
-            this.phoneStore = new StoreManager(ItemsHolder.createPhones());
+            vehicleStore = new StoreManager(ItemsHolder.createVehicles());
+            watchStore = new StoreManager(ItemsHolder.createWatches());
+            clothingStore = new StoreManager(ItemsHolder.createClothes());
+            phoneStore = new StoreManager(ItemsHolder.createPhones());
         }
-
-        public int Day
+        
+        /// <summary>
+        /// Updates player name to given parameter value.
+        /// </summary>
+        public bool ChangePlayerName(string name)
         {
-            get
+            if (!string.IsNullOrEmpty(name))
             {
-                return day;
+                player.Name = name;
+                return true;
             }
 
-            set
-            {
-                day = value;
-            }
+            return false;
         }
 
-        public Player Player
+        /// <summary>
+        /// Returns the string name of the player.
+        /// </summary>
+        /// <returns>The string name of the player</returns>
+        public string GetPlayerName()
         {
-            get
-            {
-                return player;
-            }
-
-            set
-            {
-                player = value;
-            }
+            return player.Name;
         }
 
-        public void ChangeName()
+        /// <summary>
+        /// Sets the city of the player to the given parameter value.
+        /// </summary>
+        /// <param name="city">The string city to set in the Player object.</param>
+        /// <returns></returns>
+        public bool ChangeCity(string city)
         {
-            DialogResult nameDialog = new DialogResult();
-            NameCityForm nameForm = new NameCityForm("Change name", "What is your name?", player.Name);
-            nameDialog = nameForm.ShowDialog();
-            if (nameDialog == DialogResult.OK)
+            if (!string.IsNullOrEmpty(city))
             {
-                player.Name = nameForm.Value;
+                player.City = city;
+                return true;
             }
+            return false;
         }
 
-        public void ChangeCity()
+        /// <summary>
+        /// Returns the string name of the city of player.
+        /// </summary>
+        /// <returns>The string name of the city of the player.</returns>
+        public string GetPlayerCity()
         {
-            DialogResult cityDialog = new DialogResult();
-            NameCityForm cityForm = new NameCityForm("Change city", "Where do you live?", player.City);
-            cityDialog = cityForm.ShowDialog();
-            if (cityDialog == DialogResult.OK)
-            {
-                player.City = cityForm.Value;
-            }
+            return player.City;
         }
 
+        /// <summary>
+        /// Handles the logic for a Work-activity. Returns the Event that is generated
+        /// by the EventManager. Returns null if no event is generated.
+        /// </summary>
+        /// <returns>The generated Event if generated, null otherwise.</returns>
         public Event Work()
         {
             player.Money += 100 + (player.School * 5);
@@ -99,12 +114,17 @@ namespace GuidoSimulator
                 EventEffect evtEffect = randomWorkEvent.Effect;
                 HandleEventEffect(evtEffect);
             }
-                
-            Day++;
+
+            SkipToNextDay();
 
             return randomWorkEvent;
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public Event Gym()
         {
             player.School -= 3;
@@ -119,12 +139,16 @@ namespace GuidoSimulator
                 EventEffect evtEffect = randomGymEvent.Effect;
                 HandleEventEffect(evtEffect);
             }
-            
-            Day++;
+
+            SkipToNextDay();
 
             return randomGymEvent;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public Event Family()
         {
             player.School -= 3;
@@ -140,11 +164,15 @@ namespace GuidoSimulator
                 HandleEventEffect(evtEffect);
             }
 
-            Day++;
+            SkipToNextDay();
 
             return randomFamilyEvent;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public Event School()
         {
             player.School += 4;
@@ -158,14 +186,17 @@ namespace GuidoSimulator
             {
                 EventEffect evtEffect = randomSchoolEvent.Effect;
                 HandleEventEffect(evtEffect);
-            }                
+            }
 
-            Day++;
+            SkipToNextDay();
 
             return randomSchoolEvent;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public Event Clubbing()
         {
             player.School -= 3;
@@ -180,13 +211,27 @@ namespace GuidoSimulator
                 EventEffect evtEffect = randomClubbingEvent.Effect;
                 HandleEventEffect(evtEffect);
             }
-            
-            Day++;
+
+            SkipToNextDay();
 
             return randomClubbingEvent;
         }
 
-        // Updates Player stats according to event-effect
+
+        /// <summary>
+        /// Updates the day counter and the currentDate of the game.
+        /// </summary>
+        private void SkipToNextDay()
+        {
+            day++;
+            currentDate = currentDate.AddDays(1);
+        }
+
+
+        /// <summary>
+        /// Applies the effect of an event to the Player.
+        /// </summary>
+        /// <param name="evtEffect">The EventEffect that affects the player's stats.</param>
         private void HandleEventEffect(EventEffect evtEffect)
         {
             player.Money += evtEffect.Money;
@@ -196,6 +241,10 @@ namespace GuidoSimulator
             player.Appearance += evtEffect.Appearance;
         }
 
+        /// <summary>
+        /// Applies the effect of an item to the Player.
+        /// </summary>
+        /// <param name="itemEffect">The ItemEffect that affects the player's stats.</param>
         private void ApplyItemEffect(ItemEffect itemEffect)
         {
             Player.Appearance += itemEffect.Appearance;

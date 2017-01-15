@@ -28,6 +28,7 @@ namespace GuidoSimulator
         private void InitializeGUI()
         {
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.Text = evt.Title;
 
             title_label.Text = evt.Title;
             description_label.Text = evt.Description;
