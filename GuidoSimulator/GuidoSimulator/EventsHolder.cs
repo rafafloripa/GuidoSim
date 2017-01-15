@@ -15,7 +15,7 @@ namespace GuidoSimulator
     public class EventsHolder
     {
         /// <summary>
-        /// TO-DO...
+        /// Work events factory method
         /// </summary>
         /// <returns></returns>
         public static List<Event> CreateWorkEvents()
@@ -25,54 +25,63 @@ namespace GuidoSimulator
             workEvents.Add(new Event("Generous Tip", "One of your customers was very happy with your service and gave you a fat $100 tip!", 
                             Properties.Resources.happy_face, new EventEffect(100, 0, 0, 0, 0)));
             
-            workEvents.Add(new Event("Work Event01", "Work Event01 description",
+            workEvents.Add(new Event("Clumsy!", "You spilled milk all over the staff room desk today. Your reputation has gone down.",
                             Properties.Resources.happy_face, new EventEffect(0, 0, 0, -3, 0)));
             
-            workEvents.Add(new Event("Work Event02", "Work Event02 description",
-                            Properties.Resources.sad_face, new EventEffect(0, 0, 0, -3, 0)));
+            workEvents.Add(new Event("Great skills", "You landed a big client at work today. You got a bonus, and your reputation has gone up!",
+                            Properties.Resources.happy_face, new EventEffect(50, 0, 0, 10, 0)));
 
             workEvents.Add(new Event("Slow Down!", "You were fined on your way to work. Money - 48$",
                             Properties.Resources.sad_face, new EventEffect(-48, 0, 0, 0, 0)));
+
             
             return workEvents;
         }
         
         /// <summary>
-        /// TO-DO...
+        /// School event factory method
         /// </summary>
         /// <returns></returns>
         public static List<Event> CreateSchoolEvents() {
             List<Event> schoolEvents = new List<Event>();
-
             // Add choice events...***
-            schoolEvents.Add(new Event("School Event 1", "The 1st TEST school event",
-                Properties.Resources.happy_face, new EventEffect(0, 0, 0, 0, 0)));
+            schoolEvents.Add(new Event("Mom...", "You accidentally called the teacher mom today. Your reputation and appearance has gone down.",
+                Properties.Resources.sad_face, new EventEffect(0, -10, 0, -10, 0)));
 
-            schoolEvents.Add(new Event("School Event 2", "The 2nd TEST school event",
-                Properties.Resources.sad_face, new EventEffect(0, 0, 0, 0, 0)));
+            schoolEvents.Add(new Event("Ace!", "You aced the test today! Your family is happy with you and decides to give you a fat $100 tip!",
+                Properties.Resources.happy_face, new EventEffect(100, 0, 10, 0, 20)));
+
+            schoolEvents.Add(new Event("Fight!", "You fought the school bully today. The school isn't happy with you, but your reputation has increased!",
+                Properties.Resources.happy_face, new EventEffect(0, 0, 0, 20, -10)));
+
+            schoolEvents.Add(new Event("Whoops..", "Seems that you 'accidentally' put off the fire alarm today with your fireworks! Your classmates are impressed, your reputation has gone up.",
+                Properties.Resources.happy_face, new EventEffect(0, 0, 0, 10, 0)));
 
             return schoolEvents;
         }
 
         /// <summary>
-        /// TO-DO...
+        /// Family event factory method
         /// </summary>
         /// <returns></returns>
         public static List<Event> CreateFamilyEvents()
         {
             List<Event> familyEvents = new List<Event>();
-
-            familyEvents.Add(new Event("Family Event 1", "The 1st TEST family event",
-                Properties.Resources.happy_face, new EventEffect(0, 0, 0, 0, 0)));
-
-            familyEvents.Add(new Event("Family Event 2", "The 2nd TEST family event",
-                Properties.Resources.sad_face, new EventEffect(0, 0, 0, 0, 0)));
+            // 
+            familyEvents.Add(new Event("Babysitting", "Your parents gave you a fat $100 tip for babysitting today!",
+                Properties.Resources.happy_face, new EventEffect(100, 0, 10, 0, 0)));
+            familyEvents.Add(new Event("Fight", "You got in a fight with your parents over your curfew.",
+                Properties.Resources.sad_face, new EventEffect(0, 0, -10, 0, 0)));
+            familyEvents.Add(new Event("Family reunion", "You attended the family reunion today! The family is very happy with you.",
+                Properties.Resources.happy_face, new EventEffect(0, 0, 10, 0, 0)));
+            familyEvents.Add(new Event("Phone addict!", "Your parents got mad at you today for being on your phone all day. They are not happy!",
+                Properties.Resources.sad_face, new EventEffect(0, 0, -5, 0, 0)));
 
             return familyEvents;
         }
 
         /// <summary>
-        /// TO-DO...
+        /// Gym event factory method
         /// </summary>
         /// <returns></returns>
         public static List<Event> CreateGymEvents()
@@ -95,18 +104,24 @@ namespace GuidoSimulator
         }
 
         /// <summary>
-        /// TO-DO...
+        /// Clubbing event factory method
         /// </summary>
         /// <returns></returns>
         public static List<Event> CreateClubbingEvents()
         {
             List<Event> clubbingEvents = new List<Event>();
 
-            clubbingEvents.Add(new Event("Clubbing Event 1", "The 1st TEST Clubbing event",
-                Properties.Resources.happy_face, new EventEffect(0, 0, 0, 0, 0)));
+            clubbingEvents.Add(new Event("Sick", "You had a few too many drinks at the club today and had to take a cab home. This isn't good for your reputation!",
+                Properties.Resources.sad_face, new EventEffect(0, 0, 0, -10, 0)));
 
-            clubbingEvents.Add(new Event("Clubbing Event 2", "The 2nd TEST Clubbing event",
-                Properties.Resources.sad_face, new EventEffect(0, 0, 0, 0, 0)));
+            clubbingEvents.Add(new Event("Life of the party!", "The DJ played all the right music today and you busted some great dance moves. Your appearance and reputation have increased!",
+                Properties.Resources.happy_face, new EventEffect(0, 15, 0, 8, 0)));
+
+            clubbingEvents.Add(new Event("Fight!", "You hit on the wrong girl so her boyfriend beat you up and broke your nose! This is not good for your reputation and appearance..",
+                Properties.Resources.sad_face, new EventEffect(0, -10, 0, -10, 0)));
+
+            clubbingEvents.Add(new Event("Bouncer problems", "The bouncer checked your ID and saw that you were too young to hit the club. Your reputation has decreased!",
+                Properties.Resources.happy_face, new EventEffect(0, 0, 0, -20, 0)));
 
             return clubbingEvents;
         }
