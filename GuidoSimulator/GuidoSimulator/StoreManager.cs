@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace GuidoSimulator
 {
+    /// <summary>
+    /// Name:       StoreManager.cs 
+    /// 
+    /// Created:    Mohammad Ahraz Asif & Marco Trifance
+    /// Purpose:    Provides the store functionality for the UI layer (BaseStoreForm) to utilise.
+    /// </summary>
     public class StoreManager
     {
         protected Item[] items;

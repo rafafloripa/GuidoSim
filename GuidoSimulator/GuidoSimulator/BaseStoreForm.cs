@@ -10,8 +10,17 @@ using System.Windows.Forms;
 
 namespace GuidoSimulator
 {
+    /// <summary>
+    /// Name:       BaseStoreForm.cs 
+    /// 
+    /// Created:    by Mohammad Ahraz Asif, modified by Marco Trifance
+    /// Purpose:    Acts as the presentation layer for all the 'stores' within the system. Chains method calls to the appropriate storeManager and updates the mainForm when finished.
+    /// 
+    /// </summary>
+
     public partial class BaseStoreForm : Form
     {
+
         protected MainForm mainForm;
         protected GameManager gameManager;
         protected StoreManager storeManager;
@@ -49,7 +58,7 @@ namespace GuidoSimulator
         }
 
         /// <summary>
-        /// 
+        /// Updates the money label.
         /// </summary>
         protected void updateBudgetLabel()
         {

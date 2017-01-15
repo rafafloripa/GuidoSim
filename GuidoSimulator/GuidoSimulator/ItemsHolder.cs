@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace GuidoSimulator
 {
+    /// <summary>
+    /// 
+    /// Name :      ItemEffect.cs
+    /// Created:    Mohammad Ahraz Asif & Marco Trifance
+    /// Purpose:    Factory for creating all the different items.
+    /// </summary>
     public class ItemsHolder
     {
         // Clothing IDs: 0-9
