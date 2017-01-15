@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace GuidoSimulator
 {
-    /* Class:       EventEffect.cs
-     * 
-     * Created:     by Marco Trifance, Jan 13th 2017
-     * Purpose:     data-type that holds the points to be added or subtracted
-     *              from the Player stats as the effect of an Event.
-     */
+    /// <summary>
+    /// Class:      EventEffect.cs
+    /// 
+    /// Created:    by Marco Trifance, Jan 13th 2017
+    /// Purpose:    data-type that holds the points to be added or subtracted
+    ///             from the Player stats as the effect of an Event.
+    /// </summary>
     public class EventEffect
     {
         private decimal money;
@@ -55,7 +56,14 @@ namespace GuidoSimulator
             set { school = value; }
         }
 
-        // Constructor
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="money">The decimal money amount to add/subtract from player.</param>
+        /// <param name="appearance">The int appearance points to add/subtract from player.</param>
+        /// <param name="family">The int family points to add/subtract from player.</param>
+        /// <param name="reputation">The int reputation points to add/subtract from player.</param>
+        /// <param name="school">The int school points to add/subtract from player.</param>
         public EventEffect(decimal money, int appearance, int family, int reputation, int school) {
             this.money = money;
             this.appearance = appearance;
@@ -64,7 +72,10 @@ namespace GuidoSimulator
             this.school = school;
         }
 
-        // To-do
+        /// <summary>
+        /// Returns a string representation of the EventEffect object.
+        /// </summary>
+        /// <returns>The string representation of the EventEffect object.</returns>
         public override string ToString()
         {
             string effectString = string.Empty;
@@ -96,6 +107,5 @@ namespace GuidoSimulator
 
             return effectString;
         }
-        
     }
 }

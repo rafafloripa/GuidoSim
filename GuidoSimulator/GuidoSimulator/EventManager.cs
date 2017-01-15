@@ -8,7 +8,7 @@ using System.Windows.Forms;
 namespace GuidoSimulator
 {
     /// <summary>
-    /// Class:   EventManager.cs
+    /// Class:      EventManager.cs
     /// 
     /// Created:    by Marco Trifance, Jan 13th 2017
     /// Purpose:    Contains the logic for generating random events for each 
@@ -16,7 +16,7 @@ namespace GuidoSimulator
     /// </summary>
     class EventManager
     {
-        private const double EVENT_PROBABILITY = 0.90;
+        private const double EVENT_PROBABILITY = 0.30;
 
         Random rnd = new Random();      
 

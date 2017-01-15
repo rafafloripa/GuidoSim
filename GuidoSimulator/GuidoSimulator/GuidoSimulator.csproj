@@ -52,6 +52,7 @@
     <Compile Include="AboutGuido.Designer.cs">
       <DependentUpon>AboutGuido.cs</DependentUpon>
     </Compile>
+    <Compile Include="ActivityResult.cs" />
     <Compile Include="ChoiceEvent.cs" />
     <Compile Include="Clothing.cs" />
     <Compile Include="EventEffect.cs" />

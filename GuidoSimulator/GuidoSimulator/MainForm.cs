@@ -116,7 +116,6 @@ namespace GuidoSimulator
         /// </summary>
         private void updateDay()
         {
-            //label_day.Text = "Day " + gameManager.Day.ToString();
             label_day.Text = gameManager.DateString;
         }
 
@@ -190,7 +189,18 @@ namespace GuidoSimulator
         private void button_workActivity_Click(object sender, EventArgs e)
         {
             DisableButtons();
-            Event workEvent = gameManager.Work();
+            ActivityResult workResult = gameManager.Work();
+
+            // Check if activity was completed
+            if (!workResult.Completed)
+            {
+                MessageBox.Show(workResult.Description, "On the 7th day you shall rest.");
+                UpdateGUI();
+                EnableButtons();
+                return;
+            }
+                
+            Event workEvent = workResult.ActivityEvent;
 
             if (workEvent != null)
             {
@@ -223,8 +233,8 @@ namespace GuidoSimulator
 
                 eventForm.FormClosed += (newsender, newe) =>
                 {
-                    EnableButtons();
                     UpdateGUI();
+                    EnableButtons();
                 };
 
                 eventForm.Show();
@@ -239,7 +249,8 @@ namespace GuidoSimulator
         private void button_gymActivity_Click(object sender, EventArgs e)
         {
             DisableButtons();
-            Event gymEvent = gameManager.Gym();
+            ActivityResult gymResult = gameManager.Gym();
+            Event gymEvent = gymResult.ActivityEvent;
 
             if (gymEvent != null)
             {
@@ -261,7 +272,17 @@ namespace GuidoSimulator
         private void button_clubbingActivity_Click(object sender, EventArgs e)
         {
             DisableButtons();
-            Event clubbingEvent = gameManager.Clubbing();
+            ActivityResult clubbingRes = gameManager.Clubbing();
+
+            if (!clubbingRes.Completed)
+            {
+                MessageBox.Show(clubbingRes.Description, "All clubs are closed on Monday.");
+                UpdateGUI();
+                EnableButtons();
+                return;
+            }
+
+            Event clubbingEvent = clubbingRes.ActivityEvent;
 
             if (clubbingEvent != null)
             {
@@ -283,7 +304,19 @@ namespace GuidoSimulator
         private void button_schoolActivity_Click(object sender, EventArgs e)
         {
             DisableButtons();
-            Event schoolEvent = gameManager.School();
+
+            ActivityResult schoolResult = gameManager.School();
+
+            // Check if activity was completed
+            if (!schoolResult.Completed)
+            {
+                MessageBox.Show(schoolResult.Description, "On the 7th day you shall rest.");
+                UpdateGUI();
+                EnableButtons();
+                return;
+            }
+
+            Event schoolEvent = schoolResult.ActivityEvent;
 
             if (schoolEvent != null)
             {
@@ -305,7 +338,8 @@ namespace GuidoSimulator
         private void button_familyActivity_Click(object sender, EventArgs e)
         {
             DisableButtons();
-            Event familyEvent = gameManager.Family();
+            ActivityResult familyRes = gameManager.Family();
+            Event familyEvent = familyRes.ActivityEvent;
 
             if (familyEvent != null)
             {

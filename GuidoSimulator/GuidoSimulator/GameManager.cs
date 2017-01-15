@@ -7,13 +7,19 @@ using System.Windows.Forms;
 
 namespace GuidoSimulator
 {
+
+    /// <summary>
+    /// Name:       GameManager.cs
+    /// 
+    /// Created:    by...
+    /// Purpose:    Handles the game logic.
+    /// </summary>
     public class GameManager
     {
         private DateTime startDate = new DateTime(2017, 1, 1);
 
         private DateTime currentDate;
         private int day;
-        private DateTime date;
         private Player player;
 
         private EventManager eventManager;
@@ -99,124 +105,170 @@ namespace GuidoSimulator
         /// by the EventManager. Returns null if no event is generated.
         /// </summary>
         /// <returns>The generated Event if generated, null otherwise.</returns>
-        public Event Work()
+        public ActivityResult Work()
         {
+            ActivityResult activityRes;
+
+            // Check if holiday
+            if (IsHoliday())
+            {
+                activityRes = new ActivityResult(false, "You can't work on a holiday.", null);
+                //SkipToNextDay();
+                return activityRes;
+            }
+            
+            // Update player's stats
             player.Money += 100 + (player.School * 5);
             player.School -= 3;
             player.Reputation -= 3;
             player.Family -= 3;
             player.Appearance -= 3;
 
+            activityRes = new ActivityResult(true, string.Empty, null);
+
             Event randomWorkEvent = eventManager.RandomWorkEvent();
 
             if (randomWorkEvent != null && randomWorkEvent.GetType() == typeof(Event))
             {
+                activityRes.ActivityEvent = randomWorkEvent;
                 EventEffect evtEffect = randomWorkEvent.Effect;
                 HandleEventEffect(evtEffect);
             }
 
             SkipToNextDay();
 
-            return randomWorkEvent;
+            return activityRes;
         }
 
-
         /// <summary>
-        /// 
+        /// Handles the logic for a Gym-activity. Returns the Event that is generated
+        /// by the EventManager. Returns null if no event is generated.
         /// </summary>
-        /// <returns></returns>
-        public Event Gym()
+        /// <returns>The generated Event if generated, null otherwise.</returns>
+        public ActivityResult Gym()
         {
             player.School -= 3;
             player.Reputation += 2;
             player.Family -= 3;
             player.Appearance += 4;
 
+            ActivityResult activityRes = new ActivityResult(true, string.Empty, null);
+
             Event randomGymEvent = eventManager.RandomGymEvent();
 
             if (randomGymEvent != null)
             {
+                activityRes.ActivityEvent = randomGymEvent;
                 EventEffect evtEffect = randomGymEvent.Effect;
                 HandleEventEffect(evtEffect);
             }
 
             SkipToNextDay();
 
-            return randomGymEvent;
+            return activityRes;
         }
 
         /// <summary>
-        /// 
+        /// Handles the logic for a Family-activity. Returns the Event that is generated
+        /// by the EventManager. Returns null if no event is generated.
         /// </summary>
-        /// <returns></returns>
-        public Event Family()
+        /// <returns>The generated Event if generated, null otherwise.</returns>
+        public ActivityResult Family()
         {
             player.School -= 3;
             player.Reputation -= 3;
             player.Family += 9;
             player.Appearance -= 3;
 
+            ActivityResult activityRes = new ActivityResult(true, string.Empty, null);
+
             Event randomFamilyEvent = eventManager.RandomFamilyEvent();
 
             if (randomFamilyEvent != null)
             {
+                activityRes.ActivityEvent = randomFamilyEvent;
                 EventEffect evtEffect = randomFamilyEvent.Effect;
                 HandleEventEffect(evtEffect);
             }
 
             SkipToNextDay();
 
-            return randomFamilyEvent;
+            return activityRes;
         }
 
         /// <summary>
-        /// 
+        /// Handles the logic for a School-activity. Returns the Event that is generated
+        /// by the EventManager. Returns null if no event is generated.
         /// </summary>
-        /// <returns></returns>
-        public Event School()
+        /// <returns>The generated Event if generated, null otherwise.</returns>
+        public ActivityResult School()
         {
+            ActivityResult activityRes;
+
+            // Check if holiday
+            if (IsHoliday())
+            {
+                activityRes = new ActivityResult(false, "You can't go to school on a holiday.", null);
+                //SkipToNextDay();
+                return activityRes;
+            }
+
             player.School += 4;
             player.Reputation -= 3;
             player.Family += 2;
             player.Appearance -= 3;
 
+            activityRes = new ActivityResult(true, string.Empty, null);
+
             Event randomSchoolEvent = eventManager.RandomSchoolEvent();
 
             if (randomSchoolEvent != null)
             {
+                activityRes.ActivityEvent = randomSchoolEvent;
                 EventEffect evtEffect = randomSchoolEvent.Effect;
                 HandleEventEffect(evtEffect);
             }
 
             SkipToNextDay();
 
-            return randomSchoolEvent;
+            return activityRes;
         }
 
         /// <summary>
-        /// 
+        /// Handles the logic for a Clubbing-activity. Returns the Event that is generated
+        /// by the EventManager. Returns null if no event is generated.
         /// </summary>
-        /// <returns></returns>
-        public Event Clubbing()
+        /// <returns>The generated Event if generated, null otherwise.</returns>
+        public ActivityResult Clubbing()
         {
+            ActivityResult clubbingRes;
+
+            if (IsMonday())
+            {
+                clubbingRes = new ActivityResult(false, "All clubs are closed on Monday.", null);
+                //SkipToNextDay();
+                return clubbingRes;
+            }
+
             player.School -= 3;
             player.Reputation += 4;
             player.Family -= 3;
             player.Appearance += 2;
 
+            clubbingRes = new ActivityResult(true, string.Empty, null);
             Event randomClubbingEvent = eventManager.RandomClubbingEvent();
 
             if (randomClubbingEvent != null)
             {
+                clubbingRes.ActivityEvent = randomClubbingEvent;
                 EventEffect evtEffect = randomClubbingEvent.Effect;
                 HandleEventEffect(evtEffect);
             }
 
             SkipToNextDay();
 
-            return randomClubbingEvent;
+            return clubbingRes;
         }
-
 
         /// <summary>
         /// Updates the day counter and the currentDate of the game.
@@ -227,6 +279,34 @@ namespace GuidoSimulator
             currentDate = currentDate.AddDays(1);
         }
 
+        /// <summary>
+        /// Returns true if current date is either a Sunday or Christmas, false otherwise.
+        /// </summary>
+        /// <returns>True if current date is either a Sunday or Christmas, false otherwise.</returns>
+        private bool IsHoliday()
+        {
+            if (currentDate.DayOfWeek == DayOfWeek.Sunday)
+                return true;
+
+            DateTime christmasDay = new DateTime(2017, 12, 25);
+
+            if (currentDate.Day.Equals(christmasDay.Day) && currentDate.Month.Equals(christmasDay.Month))
+                return true;
+
+            return false;
+        }
+
+        /// <summary>
+        /// Returns true if current date is either a Monday, false otherwise.
+        /// </summary>
+        /// <returns>True if current date is either a Monday, false otherwise.</returns>
+        private bool IsMonday()
+        {
+            if (currentDate.DayOfWeek == DayOfWeek.Monday)
+                return true;
+            else
+                return false;
+        }
 
         /// <summary>
         /// Applies the effect of an event to the Player.
