@@ -13,7 +13,6 @@ namespace GuidoSimulator
         // Creates Default watch
         public static Clothing CreateDefaultClothes()
         {
-            // Change Icon!!!
             return new Clothing(0, "Default Clothes", "default clothes", 0, Properties.Resources.default_clothes, new ItemEffect(0, 0, 0, 0));
         }
 
@@ -36,7 +35,6 @@ namespace GuidoSimulator
         // Creates Default watch
         public static Vehicle CreateDefaultVehicle()
         {
-            // Change Icon!!!
             return new Vehicle(10, "Default Vehicle", "default vehicle", 0, Properties.Resources.default_vehicle, new ItemEffect(0, 0, 0, 0));
         }
 
@@ -60,7 +58,6 @@ namespace GuidoSimulator
         // Creates Default watch
         public static Watch CreateDefaultWatch()
         {
-            // Change Icon!!!
             return new Watch(20, "Default Watch", "default watch", 0, Properties.Resources.default_watch, new ItemEffect(0, 0, 0, 0));
         }
 
@@ -68,14 +65,14 @@ namespace GuidoSimulator
         public static Watch[] createWatches()
         {
             Watch[] watchList = new Watch[4];
-            watchList[0] = new Watch(21, "Watch 0", "Watch 0 description.", 100,
-               Properties.Resources.watch1, new ItemEffect(0, 0, 0, 0));
-            watchList[1] = new Watch(22, "Watch 1", "Watch 1 description.", 500,
-               Properties.Resources.watch_level_1, new ItemEffect(0, 0, 0, 0));
-            watchList[2] = new Watch(23, "Watch 2", "Watch 3 description.", 5000,
-               Properties.Resources.watch_level_2, new ItemEffect(0, 0, 0, 0));
-            watchList[3] = new Watch(24, "Watch 3", "Watch 3 description.", 20000,
-               Properties.Resources.watch_level_3, new ItemEffect(0, 0, 0, 0));
+            watchList[0] = new Watch(21, "Passio", "The watch described as by the CIA to be the most commonly used watch by criminals.", 100,
+               Properties.Resources.watch1, new ItemEffect(5, 0, 0, 0));
+            watchList[1] = new Watch(22, "Old watch", "A cheap watch from a thrift shop. Great to appeal to hipsters!", 500,
+               Properties.Resources.watch_level_1, new ItemEffect(10, 0, 0, 0));
+            watchList[2] = new Watch(23, "Polex", "The cheapest expensive watch out there. A must have for any budding Guido.", 7500,
+               Properties.Resources.watch_level_2, new ItemEffect(25, 0, 0, 0));
+            watchList[3] = new Watch(24, "Wrist Icicle", "Diamonds, diamonds, diamonds.", 20000,
+               Properties.Resources.watch_level_3, new ItemEffect(60, 0, 0, 0));
             return watchList;
         }
 
@@ -84,7 +81,6 @@ namespace GuidoSimulator
         // Creates Default phone
         public static Phone CreateDefaultPhone()
         {
-            // Change Icon!!!
             return new Phone(30, "Default Phone", "default phone", 0, Properties.Resources.default_phone, new ItemEffect(0, 0, 0, 0));
         }
 
