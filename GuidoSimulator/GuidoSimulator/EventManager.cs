@@ -16,7 +16,7 @@ namespace GuidoSimulator
     /// </summary>
     class EventManager
     {
-        private const double EVENT_PROBABILITY = 0.99;
+        private const double EVENT_PROBABILITY = 0.33;
 
         Random rnd = new Random();      
 
