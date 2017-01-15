@@ -296,5 +296,11 @@ namespace GuidoSimulator
             };
             watchStore.Show();
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutGuido aboutBox = new AboutGuido();
+            aboutBox.ShowDialog();
+        }
     }
 }

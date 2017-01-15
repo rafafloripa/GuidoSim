@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutGuido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutGuido.Designer.cs">
+      <DependentUpon>AboutGuido.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChoiceEvent.cs" />
     <Compile Include="Clothing.cs" />
     <Compile Include="EventEffect.cs" />
@@ -87,6 +93,9 @@
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutGuido.resx">
+      <DependentUpon>AboutGuido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaseStoreForm.resx">
       <DependentUpon>BaseStoreForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -10,7 +10,7 @@ namespace GuidoSimulator
     /// <summary>
     /// 
     /// Name :      Item.cs
-    /// 
+    /// Created:    Mohammad Ahraz Asif, modified by Marco Trifance
     /// Purpose:    Base class for all Items. Extended by child classes such as Clothing, Watch,
     ///             and Vehicle.
     /// </summary>
@@ -43,6 +43,7 @@ namespace GuidoSimulator
         /// <param name="description">The description of the Item object.</param>
         /// <param name="price">The price of the Item object.</param>
         /// <param name="image">The image of the Item object.</param>
+        /// <param name="itemEffect">The effects the item will have on the Player.</param>
         public Item(int id, String name, String description, decimal price, Image image, ItemEffect itemEffect)
         {
             this.name = name;
