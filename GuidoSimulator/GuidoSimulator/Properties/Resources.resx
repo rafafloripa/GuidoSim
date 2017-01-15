@@ -202,13 +202,43 @@
   <data name="walk_on_sh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\walk_on_sh.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="angry_parents" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\angry_parents.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="base_clothing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\base_clothing.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bouncer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bouncer.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cash_advan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cash-advan.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="drinks" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drinks.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fire_alarm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fire_alarm.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="fitness_master" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fitness_master.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fitness_nerd" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fitness_nerd.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="phone_addict" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phone_addict.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="police" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\police.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="teacher" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\teacher.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tests" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tests.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="travolta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\travolta.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -24,35 +24,35 @@ namespace GuidoSimulator
         public decimal Money
         {
             get{ return money; }
-            set { this.money = value;}
+            set { money = value;}
         }
 
         // Property: gives read and write access to 'appearance'
         public int Appearance
         {
             get { return appearance; }
-            set { this.appearance = value; }
+            set { appearance = value; }
         }
 
         // Property: gives read and write access to 'family'
         public int Family
         {
             get { return family; }
-            set { this.family = value; }
+            set { family = value; }
         }
 
         // Property: gives read and write access to 'reputation'
         public int Reputation
         {
             get { return reputation; }
-            set { this.reputation = value; }
+            set { reputation = value; }
         }
 
         // Property: gives read and write access to 'school'
         public int School
         {
             get { return school; }
-            set { this.school = value; }
+            set { school = value; }
         }
 
         // Constructor
@@ -67,8 +67,35 @@ namespace GuidoSimulator
         // To-do
         public override string ToString()
         {
-            // To-do...
-            return base.ToString();
+            string effectString = string.Empty;
+
+            if (money > 0)
+                effectString += "Money  +" + money.ToString();
+            else if(money < 0)
+                effectString += "Money " + money.ToString();
+
+            if (appearance > 0)
+                effectString += "   Appearance  +" + appearance.ToString();
+            else if (appearance < 0)
+                effectString += "   Appearance" + appearance.ToString();
+
+            if (family > 0)
+                effectString += "   Family  +" + family.ToString();
+            else if (family< 0)
+                effectString += "   Family " + family.ToString();
+
+            if (reputation > 0)
+                effectString += "   Reputation  +" + reputation.ToString();
+            else if (reputation < 0)
+                effectString += "   Reputation " + reputation.ToString();
+
+            if (school > 0)
+                effectString += "   School +" + school.ToString();
+            else if (school < 0)
+                effectString += "   School " + school.ToString();
+
+            return effectString;
         }
+        
     }
 }

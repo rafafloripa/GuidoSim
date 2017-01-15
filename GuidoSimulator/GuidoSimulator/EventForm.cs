@@ -27,9 +27,12 @@ namespace GuidoSimulator
         /// </summary>
         private void InitializeGUI()
         {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+
             title_label.Text = evt.Title;
             description_label.Text = evt.Description;
             event_pictureBox.Image = evt.EventImage;
+            effect_label.Text = evt.Effect.ToString();
         }
     }
 }

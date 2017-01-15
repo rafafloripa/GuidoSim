@@ -215,6 +215,36 @@
   <ItemGroup>
     <None Include="Resources\police.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bouncer.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\angry_parents.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone_addict.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\travolta.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teacher.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cash-advan.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drinks.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fire_alarm.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tests.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\base_clothing.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

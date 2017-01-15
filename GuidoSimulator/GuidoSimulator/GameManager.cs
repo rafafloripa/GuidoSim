@@ -86,7 +86,7 @@ namespace GuidoSimulator
 
         public Event Work()
         {
-            player.Money += 500 + (player.School * 5);
+            player.Money += 100 + (player.School * 5);
             player.School -= 3;
             player.Reputation -= 3;
             player.Family -= 3;

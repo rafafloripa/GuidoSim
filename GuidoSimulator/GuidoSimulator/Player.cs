@@ -18,11 +18,6 @@ namespace GuidoSimulator
         private int reputation;
         private int school;
 
-        //private System.Drawing.Image clothesImage;
-        //private System.Drawing.Image phoneImage;
-        //private System.Drawing.Image vehicleImage;
-        //private System.Drawing.Image watchImage;
-
         private const int maxAttributeValue = 100;
 
         private Vehicle vehicle;

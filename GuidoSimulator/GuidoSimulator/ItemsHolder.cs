@@ -13,7 +13,7 @@ namespace GuidoSimulator
         // Creates Default watch
         public static Clothing CreateDefaultClothes()
         {
-            return new Clothing(0, "Default Clothes", "default clothes", 0, Properties.Resources.default_clothes, new ItemEffect(0, 0, 0, 0));
+            return new Clothing(0, "Default Clothes", "default clothes", 0, Properties.Resources.base_clothing, new ItemEffect(0, 0, 0, 0));
         }
 
         public static Clothing[] createClothes()
