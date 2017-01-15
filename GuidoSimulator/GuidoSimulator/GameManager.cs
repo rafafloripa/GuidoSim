@@ -92,10 +92,9 @@ namespace GuidoSimulator
             player.Family -= 3;
             player.Appearance -= 3;
 
-            //**** Insert logic when to generate event here!!! ***
             Event randomWorkEvent = eventManager.RandomWorkEvent();
 
-            if (randomWorkEvent != null)
+            if (randomWorkEvent != null && randomWorkEvent.GetType() == typeof(Event))
             {
                 EventEffect evtEffect = randomWorkEvent.Effect;
                 HandleEventEffect(evtEffect);

@@ -65,7 +65,7 @@ namespace GuidoSimulator
                 else
                     return false;
             }
-            else
+            else   // unknown item-type
                 return false;               
         }
 

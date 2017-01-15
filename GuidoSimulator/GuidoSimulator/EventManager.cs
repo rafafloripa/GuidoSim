@@ -16,7 +16,7 @@ namespace GuidoSimulator
     /// </summary>
     class EventManager
     {
-        private const double EVENT_PROBABILITY = 0.33;
+        private const double EVENT_PROBABILITY = 0.99;
 
         Random rnd = new Random();      
 
@@ -46,6 +46,7 @@ namespace GuidoSimulator
         /// <returns>The random work-event if generated, null otherwise</returns>
         public Event RandomWorkEvent()
         {
+            // Calculate probability of generating an event
             if (!EventIsTriggered())
                 return null;
 

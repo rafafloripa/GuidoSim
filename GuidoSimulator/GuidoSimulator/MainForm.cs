@@ -89,12 +89,57 @@ namespace GuidoSimulator
             label_playerCity.Text = gameManager.Player.City;
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void EnableButtons()
+        {
+            button_clothesStore.Enabled = true;
+            button_scooterStore.Enabled = true;
+            button_watchStore.Enabled = true;
+            button_phoneStore.Enabled = true;
+            button_gymActivity.Enabled = true;
+            button_familyActivity.Enabled = true;
+            button_workActivity.Enabled = true;
+            button_clubbingActivity.Enabled = true;
+            button_schoolActivity.Enabled = true;
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void DisableButtons()
+        {
+            button_clothesStore.Enabled = false;
+            button_scooterStore.Enabled = false;
+            button_watchStore.Enabled = false;
+            button_phoneStore.Enabled = false;
+            button_gymActivity.Enabled = false;
+            button_familyActivity.Enabled = false;
+            button_workActivity.Enabled = false;
+            button_clubbingActivity.Enabled = false;
+            button_schoolActivity.Enabled = false;
+        }
+
+        /// <summary>
+        /// Event holder. Handles 'work' button-click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_workActivity_Click(object sender, EventArgs e)
         {
+            DisableButtons();
             Event workEvent = gameManager.Work();
 
-            if (workEvent != null) {
+            if (workEvent != null)
+            {
                 displayEvent(workEvent);
+            }
+            else
+            {
+                EnableButtons();
             }
 
             UpdateGUI();
@@ -103,24 +148,39 @@ namespace GuidoSimulator
         // Displays the event in a MessageBox
         private void displayEvent(Event evt)
         {
-
-            if (!evt.HasPlayerChoice)
+            // Display choice-event...
+            if (evt.GetType() == typeof(ChoiceEvent))
             {
-                MessageBox.Show(evt.Description, evt.Title);
+                MessageBox.Show("Choice event detected!!");
             }
+            // ...else display base-event...
             else
             {
-                // to-do....
+                //MessageBox.Show(evt.Description, evt.Title);
+                EventForm eventForm = new EventForm(evt);
+
+                eventForm.FormClosed += (newsender, newe) =>
+                {
+                    EnableButtons();
+                    UpdateGUI();
+                };
+
+                eventForm.Show();
             }
         }
 
         private void button_gymActivity_Click(object sender, EventArgs e)
         {
+            DisableButtons();
             Event gymEvent = gameManager.Gym();
 
             if (gymEvent != null)
             {
                 displayEvent(gymEvent);
+            }
+            else
+            {
+                EnableButtons();
             }
 
             UpdateGUI();
@@ -128,11 +188,16 @@ namespace GuidoSimulator
 
         private void button_clubbingActivity_Click(object sender, EventArgs e)
         {
+            DisableButtons();
             Event clubbingEvent = gameManager.Clubbing();
 
             if (clubbingEvent != null)
             {
                 displayEvent(clubbingEvent);
+            }
+            else 
+            {
+                EnableButtons();
             }
 
             UpdateGUI();
@@ -140,11 +205,16 @@ namespace GuidoSimulator
 
         private void button_schoolActivity_Click(object sender, EventArgs e)
         {
+            DisableButtons();
             Event schoolEvent = gameManager.School();
 
             if (schoolEvent != null)
             {
                 displayEvent(schoolEvent);
+            }
+            else
+            {
+                EnableButtons();
             }
 
             UpdateGUI();
@@ -152,11 +222,16 @@ namespace GuidoSimulator
 
         private void button_familyActivity_Click(object sender, EventArgs e)
         {
+            DisableButtons();
             Event familyEvent = gameManager.Family();
 
-            if (familyEvent  != null)
+            if (familyEvent != null)
             {
                 displayEvent(familyEvent);
+            }
+            else
+            {
+                EnableButtons();
             }
 
             UpdateGUI();
@@ -176,40 +251,48 @@ namespace GuidoSimulator
 
         private void button_clothesStore_Click(object sender, EventArgs e)
         {
+            DisableButtons();
             BaseStoreForm clothesStore = new BaseStoreForm(this, gameManager, gameManager.ClothingStore);
             clothesStore.FormClosed += (newsender, newe) =>
             {
                 UpdateGUI();
+                EnableButtons();
             };
             clothesStore.Show();
         }
 
         private void button_scooterStore_Click(object sender, EventArgs e)
         {
+            DisableButtons();
             BaseStoreForm vehicleStore = new BaseStoreForm(this, gameManager, gameManager.VehicleStore);
             vehicleStore.FormClosed += (newsender, newe) =>
             {
                 UpdateGUI();
+                EnableButtons();
             };
             vehicleStore.Show();
         }
 
         private void button_phoneStore_Click(object sender, EventArgs e)
         {
+            DisableButtons();
             BaseStoreForm phoneStore = new BaseStoreForm(this, gameManager, gameManager.PhoneStore);
             phoneStore.FormClosed += (newsender, newe) =>
             {
                 UpdateGUI();
+                EnableButtons();
             };
             phoneStore.Show();
         }
 
         private void button_watchStore_Click(object sender, EventArgs e)
         {
+            DisableButtons();
             BaseStoreForm watchStore = new BaseStoreForm(this, gameManager, gameManager.WatchStore);
             watchStore.FormClosed += (newsender, newe) =>
             {
                 UpdateGUI();
+                EnableButtons();
             };
             watchStore.Show();
         }

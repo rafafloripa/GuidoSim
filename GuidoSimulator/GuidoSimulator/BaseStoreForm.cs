@@ -27,10 +27,7 @@ namespace GuidoSimulator
             this.mainForm = mainForm;
             this.gameManager = gameManager;
             this.storeManager = storeManager;
-
-            initializeGUI();
-
-            updateBudgetLabel();        
+            initializeGUI();      
         }
 
         /// <summary>
@@ -43,10 +40,12 @@ namespace GuidoSimulator
             enableButtons();
         }
 
+        /// <summary>
+        /// Updates 
+        /// </summary>
         private void updateGUI()
         {
             updateBudgetLabel();
-            enableButtons();
         }
 
         /// <summary>
@@ -88,17 +87,6 @@ namespace GuidoSimulator
         }
 
         /// <summary>
-        /// Disables all button controls.
-        /// </summary>
-        protected void disableButtons()
-        {
-            buy_btn_item_0.Enabled = false;
-            buy_btn_item_1.Enabled = false;
-            buy_btn_item_2.Enabled = false;
-            buy_btn_item_3.Enabled = false;
-        }
-
-        /// <summary>
         /// Enables all button controls.
         /// </summary>
         protected void enableButtons()
@@ -108,6 +96,7 @@ namespace GuidoSimulator
             buy_btn_item_2.Enabled = true;
             buy_btn_item_3.Enabled = true;
         }
+        
 
         /// <summary>
         /// Event Handler. Handles 'buy item 0' button-click event.

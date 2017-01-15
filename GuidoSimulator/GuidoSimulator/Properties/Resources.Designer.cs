@@ -73,6 +73,16 @@ namespace GuidoSimulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cat {
+            get {
+                object obj = ResourceManager.GetObject("cat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap clothes_level_1 {
             get {
                 object obj = ResourceManager.GetObject("clothes_level_1", resourceCulture);
@@ -143,6 +153,26 @@ namespace GuidoSimulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fitness_master {
+            get {
+                object obj = ResourceManager.GetObject("fitness_master", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fitness_nerd {
+            get {
+                object obj = ResourceManager.GetObject("fitness_nerd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap guido {
             get {
                 object obj = ResourceManager.GetObject("guido", resourceCulture);
@@ -156,6 +186,26 @@ namespace GuidoSimulator.Properties {
         internal static System.Drawing.Bitmap guido1 {
             get {
                 object obj = ResourceManager.GetObject("guido1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap happy_face {
+            get {
+                object obj = ResourceManager.GetObject("happy_face", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap old_lady {
+            get {
+                object obj = ResourceManager.GetObject("old_lady", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,6 +253,36 @@ namespace GuidoSimulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap police {
+            get {
+                object obj = ResourceManager.GetObject("police", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sad_face {
+            get {
+                object obj = ResourceManager.GetObject("sad_face", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thug {
+            get {
+                object obj = ResourceManager.GetObject("thug", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap vehicle_level_1 {
             get {
                 object obj = ResourceManager.GetObject("vehicle_level_1", resourceCulture);
@@ -226,6 +306,26 @@ namespace GuidoSimulator.Properties {
         internal static System.Drawing.Bitmap vehicle_level_3 {
             get {
                 object obj = ResourceManager.GetObject("vehicle_level_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap viking {
+            get {
+                object obj = ResourceManager.GetObject("viking", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap walk_on_sh {
+            get {
+                object obj = ResourceManager.GetObject("walk_on_sh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

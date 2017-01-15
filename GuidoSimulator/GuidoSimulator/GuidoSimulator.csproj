@@ -46,8 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChoiceEvent.cs" />
     <Compile Include="Clothing.cs" />
     <Compile Include="EventEffect.cs" />
+    <Compile Include="EventForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventForm.Designer.cs">
+      <DependentUpon>EventForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EventsHolder.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="ItemEffect.cs" />
@@ -82,6 +89,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BaseStoreForm.resx">
       <DependentUpon>BaseStoreForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventForm.resx">
+      <DependentUpon>EventForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -174,6 +184,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\default_clothes.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\happy_face.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\old_lady.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sad_face.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thug.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\viking.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\walk_on_sh.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fitness_master.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fitness_nerd.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\police.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

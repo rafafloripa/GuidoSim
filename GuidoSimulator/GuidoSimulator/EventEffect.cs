@@ -63,5 +63,12 @@ namespace GuidoSimulator
             this.reputation = reputation;
             this.school = school;
         }
+
+        // To-do
+        public override string ToString()
+        {
+            // To-do...
+            return base.ToString();
+        }
     }
 }
