@@ -9,7 +9,7 @@ namespace GuidoSimulator
     /// <summary>
     /// 
     /// Name :      ItemEffect.cs
-    /// Created:    Mohammad Ahraz Asif & Marco Trifance
+    /// Created:    Mohammad Ahraz Asif
     /// Purpose:    Factory for creating all the different items.
     /// </summary>
     public class ItemsHolder

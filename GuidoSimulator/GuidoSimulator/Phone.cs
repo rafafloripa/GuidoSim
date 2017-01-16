@@ -10,7 +10,7 @@ namespace GuidoSimulator
     /// <summary>
     /// Name:       Clothing.cs 
     /// 
-    /// Created:    by Mohammad Ahraz Asif, modified by Marco Trifance
+    /// Created:    by Mohammad Ahraz Asif
     /// Purpose:    Wrapper class around the Item class representing a phone item
     /// </summary>
     /// 

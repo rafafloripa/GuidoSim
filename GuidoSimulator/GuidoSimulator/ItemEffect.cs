@@ -9,7 +9,7 @@ namespace GuidoSimulator
     /// <summary>
     /// 
     /// Name :      ItemEffect.cs
-    /// Created:    Mohammad Ahraz Asif, modified by Marco Trifance
+    /// Created:    Mohammad Ahraz Asif & Rafael Da Silva Martins
     /// Purpose:    The effects the item will have on the Player.
     /// </summary>
     public class ItemEffect

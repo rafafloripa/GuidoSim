@@ -10,7 +10,7 @@ namespace GuidoSimulator
     /// <summary>
     /// 
     /// Name :      Item.cs
-    /// Created:    Mohammad Ahraz Asif, modified by Marco Trifance
+    /// Created:    Mohammad Ahraz Asif, modified by Rafael Da Silva Martins
     /// Purpose:    Base class for all Items. Extended by child classes such as Clothing, Watch,
     ///             and Vehicle.
     /// </summary>

@@ -10,7 +10,7 @@ namespace GuidoSimulator
     /// <summary>
     /// Name:       Watch.cs 
     /// 
-    /// Created:    by Mohammad Ahraz Asif, modified by Marco Trifance
+    /// Created:    by Mohammad Ahraz Asif
     /// Purpose:    Wrapper class around the Item class representing a vehicle item
     /// </summary>
     /// 
