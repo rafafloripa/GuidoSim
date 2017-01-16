@@ -95,13 +95,13 @@ namespace GuidoSimulator
         {
             Phone[] phoneList = new Phone[4];
             phoneList[0] = new Phone(31, "Phone 0", "Virtually infinite battery, unbreakable shell, this good-old classic should also have Snake installed!", 200,
-               Properties.Resources.phone1, new ItemEffect(0, 0, 0, 0));
+               Properties.Resources.phone1, new ItemEffect(0, 10, 0, 10));
             phoneList[1] = new Phone(32, "JB G5", "The name says it all... or maybe not??", 1000,
-               Properties.Resources.phone_level_1, new ItemEffect(0, 0, 0, 0));
+               Properties.Resources.phone_level_1, new ItemEffect(0, 15, 0, 15));
             phoneList[2] = new Phone(33, "I-Throne 9", "Last generation mobile phone. You must have one of this.", 10000,
-               Properties.Resources.phone_level_2, new ItemEffect(0, 0, 0, 0));
+               Properties.Resources.phone_level_2, new ItemEffect(5, 20, 0, 20));
             phoneList[3] = new Phone(34, "I-Throne gold", "Be on top.", 30000,
-               Properties.Resources.phone_level_3, new ItemEffect(0, 0, 0, 0));
+               Properties.Resources.phone_level_3, new ItemEffect(20, 20, 20, 20));
             return phoneList;
         }
     }
