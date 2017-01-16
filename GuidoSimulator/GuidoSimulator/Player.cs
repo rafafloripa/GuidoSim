@@ -7,6 +7,12 @@ using System.Drawing;
 
 namespace GuidoSimulator
 {
+    /// <summary>
+    /// Name:       Player.cs
+    /// 
+    /// Created:    by Rafael da Silva Martins, Dec 23rd 2016
+    /// Purpose:    this class encapsulates the logic for the Player.
+    /// </summary>
     public class Player
     {
         private string name;

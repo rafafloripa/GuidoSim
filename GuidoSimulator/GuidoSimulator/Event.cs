@@ -17,7 +17,6 @@ namespace GuidoSimulator
     /// </summary>
     public class Event
     {
-
         protected string title;
         protected string description;
         protected Image image;

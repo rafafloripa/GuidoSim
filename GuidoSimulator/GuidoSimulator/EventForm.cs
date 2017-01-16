@@ -10,10 +10,19 @@ using System.Windows.Forms;
 
 namespace GuidoSimulator
 {
+    /// <summary>
+    /// Name:       EventForm.cs
+    /// Created:    by Marco Trifance, Jan 15th 2017
+    /// Purpose:    displays the EventForm.
+    /// </summary>
     public partial class EventForm : Form
     {
         private Event evt;
 
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="evt">The Event object to be displayed.</param>
         public EventForm(Event evt)
         {
             InitializeComponent();

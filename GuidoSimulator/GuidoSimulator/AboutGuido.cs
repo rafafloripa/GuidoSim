@@ -9,6 +9,12 @@ using System.Windows.Forms;
 
 namespace GuidoSimulator
 {
+    /// <summary>
+    /// File:       AboutGuido.cs
+    /// 
+    /// Created:    by Mohammad Ahraz Asif 
+    /// Purpose:    displays the AboutBox form.
+    /// </summary>
     partial class AboutGuido : Form
     {
         public AboutGuido()

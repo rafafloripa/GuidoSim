@@ -11,7 +11,7 @@ namespace GuidoSimulator
     /// <summary>
     /// Name:       GameManager.cs
     /// 
-    /// Created:    by...
+    /// Created:    by Rafael da Silva Martins
     /// Purpose:    Handles the game logic.
     /// </summary>
     public class GameManager
@@ -41,8 +41,6 @@ namespace GuidoSimulator
             get { return day; }
             set { this.day = value; }
         }
-
-        
 
         /// <summary>
         /// Constructor.

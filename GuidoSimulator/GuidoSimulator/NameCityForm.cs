@@ -10,6 +10,12 @@ using System.Windows.Forms;
 
 namespace GuidoSimulator
 {
+    /// <summary>
+    /// Name:       NameCityForm
+    /// Created:    by Rafael da Silva Martins, Dec 23rd 2016
+    /// 
+    /// Purpose:    displays the form used to update the name and city of the player.
+    /// </summary>
     public partial class NameCityForm : Form
     {
         public NameCityForm(string title, string question, string content)

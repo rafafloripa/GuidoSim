@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 
 namespace GuidoSimulator
 {
-    /* Class:       EventsHolder.cs
-     * 
-     * Created:     by Marco Trifance, Jan 13th 2017
-     * Purpose:     this class provides publicly accessible methods to generate the list of events 
-     *              for each of the player activities.
-     */
+    /// <summary>
+    /// Class:       EventsHolder.cs
+    /// 
+    /// Created:     by Marco Trifance, Jan 13th 2017
+    /// Purpose:     this class provides publicly accessible methods to generate the list of events
+    /// for each of the player activities.
+    /// </summary>
     public class EventsHolder
     {
         /// <summary>
         /// Work events factory method
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A List of work Event objects.</returns>
         public static List<Event> CreateWorkEvents()
         {
             List<Event> workEvents = new List<Event>();
@@ -32,11 +33,11 @@ namespace GuidoSimulator
                             Properties.Resources.police, new EventEffect(-74, 0, 0, 0, 0)));
             return workEvents;
         }
-        
+
         /// <summary>
         /// School event factory method
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A List of school Event objects.</returns>
         public static List<Event> CreateSchoolEvents() {
             List<Event> schoolEvents = new List<Event>();
             schoolEvents.Add(new Event("Mom...", "You accidentally called the teacher mom today. Your reputation and appearance has gone down.",
@@ -57,7 +58,7 @@ namespace GuidoSimulator
         /// <summary>
         /// Family event factory method
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A List of family Event objects.</returns>
         public static List<Event> CreateFamilyEvents()
         {
             List<Event> familyEvents = new List<Event>();
@@ -77,7 +78,7 @@ namespace GuidoSimulator
         /// <summary>
         /// Gym event factory method
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A List of gym Event objects.</returns>
         public static List<Event> CreateGymEvents()
         {
             List<Event> gymEvents = new List<Event>();
@@ -100,7 +101,7 @@ namespace GuidoSimulator
         /// <summary>
         /// Clubbing event factory method
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A List of clubbing Event objects.</returns>
         public static List<Event> CreateClubbingEvents()
         {
             List<Event> clubbingEvents = new List<Event>();

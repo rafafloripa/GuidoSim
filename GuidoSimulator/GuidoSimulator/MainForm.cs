@@ -13,7 +13,7 @@ namespace GuidoSimulator
     /// <summary>
     /// Name:       MainForm.cs
     /// 
-    /// Created:    by ...
+    /// Created:    by Rafael da Silva Martins
     /// 
     /// Purpose:    This module handles the user interactions with the 
     ///             GUI elements and displays the information from the GameManager.
@@ -221,25 +221,15 @@ namespace GuidoSimulator
         /// <param name="evt"></param>
         private void displayEvent(Event evt)
         {
-            // Display choice-event...
-            if (evt.GetType() == typeof(ChoiceEvent))
-            {
-                MessageBox.Show("Choice event detected!!");
-            }
-            // ...else display base-event...
-            else
-            {
-                //MessageBox.Show(evt.Description, evt.Title);
-                EventForm eventForm = new EventForm(evt);
+            EventForm eventForm = new EventForm(evt);
 
-                eventForm.FormClosed += (newsender, newe) =>
-                {
-                    UpdateGUI();
-                    EnableButtons();
-                };
+            eventForm.FormClosed += (newsender, newe) =>
+            {
+                 UpdateGUI();
+                EnableButtons();
+            };
 
-                eventForm.Show();
-            }
+            eventForm.Show();
         }
 
         /// <summary>
