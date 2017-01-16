@@ -21,6 +21,7 @@ namespace GuidoSimulator
     public partial class MainForm : Form
     {
         GameManager gameManager = new GameManager();
+        FileManager fileManager = new FileManager();
 
         /// <summary>
         /// Constructor.
@@ -487,7 +488,28 @@ namespace GuidoSimulator
         /// <param name="e"></param>
         private void on_save_fileMenu_click(object sender, EventArgs e)
         {
-            MessageBox.Show("TO-DO: save functionality");
+            // Create a SaveFileDialog
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            saveFileDialog.FileName = "Guido.txt";
+            saveFileDialog.Filter = "Text files (*.txt) |*.txt";
+
+            // If user selected OK in dialog...
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Declare user-info message 
+                string message = string.Empty;
+
+                // Save file and display message to user
+                if (fileManager.SaveGameToFile(gameManager, saveFileDialog.FileName, out message))
+                {
+                    MessageBox.Show(message, "Save file", MessageBoxButtons.OK, MessageBoxIcon.None);
+                }
+                else
+                {
+                    MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         /// <summary>
@@ -499,7 +521,25 @@ namespace GuidoSimulator
         {
             if (ReadConfirmation("Are you sure you want to load a saved game? All the unsaved data will be lost."))
             {
-                MessageBox.Show("TO-DO: load functionality");
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "Text files () (*.txt) | *.txt";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Declare user-info message 
+                    string message = string.Empty;
+                    GameManager newManager = fileManager.LoadGameFromFile(openFileDialog.FileName, out message);
+
+                    if (newManager != null)
+                    {
+                        gameManager = newManager;
+                        InitializeGUI();
+                    }
+                    else
+                    {
+                        MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
         }
 

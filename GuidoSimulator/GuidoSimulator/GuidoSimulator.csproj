@@ -63,6 +63,7 @@
       <DependentUpon>EventForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EventsHolder.cs" />
+    <Compile Include="FileManager.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="ItemEffect.cs" />
     <Compile Include="ItemsHolder.cs" />

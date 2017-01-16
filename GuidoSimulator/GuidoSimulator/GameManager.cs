@@ -34,8 +34,15 @@ namespace GuidoSimulator
         public StoreManager ClothingStore { get { return clothingStore; } }
         public StoreManager PhoneStore { get { return phoneStore; } }
         public string DateString { get { return currentDate.ToLongDateString(); } }
-        public int Day { get { return day; } }
         public Player Player { get { return player; } }
+
+        public int Day
+        {
+            get { return day; }
+            set { this.day = value; }
+        }
+
+        
 
         /// <summary>
         /// Constructor.
@@ -98,6 +105,140 @@ namespace GuidoSimulator
         public string GetPlayerCity()
         {
             return player.City;
+        }
+
+        /// <summary>
+        /// Sets Player Clothing to Item with given Id.
+        /// </summary>
+        /// <param name="clothingId"></param>
+        /// <returns>True if operation is successful, false otherwise.</returns>
+        public bool SetPlayerClothingById(int clothingId)
+        {
+            Clothing defaultClothing = ItemsHolder.CreateDefaultClothes();
+
+            if (defaultClothing.Id == clothingId)
+            {
+                player.Clothing = defaultClothing;
+                return true;
+            }
+            else
+            {
+                Clothing[] storeClothes = ItemsHolder.createClothes();
+
+                foreach (Clothing c in storeClothes)
+                {
+                    if (c.Id == clothingId)
+                    {
+                        player.Clothing = c;
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Sets Player Vehicle to Item with given Id.
+        /// </summary>
+        /// <param name="vehicleId"></param>
+        /// <returns>True if operation is successful, false otherwise.</returns>
+        public bool SetPlayerVehicleById(int vehicleId)
+        {
+            Vehicle defaultVehicle = ItemsHolder.CreateDefaultVehicle();
+
+            if (defaultVehicle.Id == vehicleId)
+            {
+                player.Vehicle = defaultVehicle;
+                return true;
+            }
+            else
+            {
+                Vehicle[] storeVehicles = ItemsHolder.createVehicles();
+
+                foreach (Vehicle v in storeVehicles)
+                {
+                    if (v.Id == vehicleId)
+                    {
+                        player.Vehicle = v;
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Sets Player Phone to Item with given Id.
+        /// </summary>
+        /// <param name="phoneId"></param>
+        /// <returns>True if operation is successful, false otherwise.</returns>
+        public bool SetPlayerPhoneById(int phoneId)
+        {
+            Phone defaultPhone = ItemsHolder.CreateDefaultPhone();
+
+            if (defaultPhone.Id == phoneId)
+            {
+                player.Phone = defaultPhone;
+                return true;
+            }
+            else
+            {
+                Phone[] storePhones = ItemsHolder.createPhones();
+
+                foreach (Phone p in storePhones)
+                {
+                    if (p.Id == phoneId)
+                    {
+                        player.Phone = p;
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Sets Player Watch to Item with given Id.
+        /// </summary>
+        /// <param name="watchId"></param>
+        /// <returns>True if operation is successful, false otherwise.</returns>
+        public bool SetPlayerWatchById(int watchId)
+        {
+            Watch defaultWatch= ItemsHolder.CreateDefaultWatch();
+
+            if (defaultWatch.Id == watchId)
+            {
+                player.Watch = defaultWatch;
+                return true;
+            }
+            else
+            {
+                Watch[] storeWatches = ItemsHolder.createWatches();
+
+                foreach (Watch w in storeWatches)
+                {
+                    if (w.Id == watchId)
+                    {
+                        player.Watch = w;
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Sets the current date to the date equal to 'startDate' plus the
+        /// number of days given by 'dayCounter' parameter.
+        /// </summary>
+        /// <param name="dayCounter"></param>
+        public void SetDateByCounter(int dayCounter)
+        {
+            currentDate = startDate.AddDays(dayCounter);
         }
 
         /// <summary>
